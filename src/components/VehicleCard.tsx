@@ -2,15 +2,18 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Vehicle } from "@/data/vehicles";
 import { Badge } from "@/components/ui/badge";
-import { Gauge, Settings, MapPin } from "lucide-react";
+import { Gauge, Settings, MapPin, Eye } from "lucide-react";
 
 interface VehicleCardProps {
   vehicle: Vehicle;
+  onViewDetails: (vehicle: Vehicle) => void;
 }
 
-const VehicleCard = ({ vehicle }: VehicleCardProps) => {
+const VehicleCard = ({ vehicle, onViewDetails }: VehicleCardProps) => {
   return (
-    <Card className="group overflow-hidden border border-border bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+    <Card className="group overflow-hidden border border-border bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+      onClick={() => onViewDetails(vehicle)}
+    >
       {/* Image Container */}
       <div className="relative overflow-hidden aspect-[4/3] bg-muted">
         <img
@@ -56,12 +59,13 @@ const VehicleCard = ({ vehicle }: VehicleCardProps) => {
           <Button 
             variant="default"
             className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold transition-all duration-300 hover:scale-105"
-            onClick={() => {
-              const contactSection = document.getElementById('contact');
-              contactSection?.scrollIntoView({ behavior: 'smooth' });
+            onClick={(e) => {
+              e.stopPropagation();
+              onViewDetails(vehicle);
             }}
           >
-            Enquire Now
+            <Eye className="w-4 h-4 mr-2" />
+            View Details
           </Button>
         </div>
       </div>

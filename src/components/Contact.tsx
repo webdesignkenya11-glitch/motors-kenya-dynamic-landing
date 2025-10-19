@@ -19,7 +19,7 @@ const Contact = () => {
     e.preventDefault();
     toast({
       title: "Message Sent!",
-      description: "Thank you for contacting Motors Kenya. We'll get back to you soon.",
+      description: "Thank you for contacting Auto Cars. We'll get back to you soon.",
     });
     setFormData({ name: "", phone: "", email: "", message: "" });
   };
@@ -109,7 +109,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="font-bold text-card-foreground mb-1">Phone</h3>
-                <p className="text-muted-foreground">+254 700 000 000</p>
+                <a href="tel:0720496076" className="text-muted-foreground hover:text-accent transition-colors">0720 496 076</a>
                 <p className="text-muted-foreground">+254 711 111 111</p>
               </div>
             </Card>
@@ -120,8 +120,8 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="font-bold text-card-foreground mb-1">Email</h3>
-                <p className="text-muted-foreground">info@motorskenya.com</p>
-                <p className="text-muted-foreground">sales@motorskenya.com</p>
+                <p className="text-muted-foreground">info@autocars.co.ke</p>
+                <p className="text-muted-foreground">sales@autocars.co.ke</p>
               </div>
             </Card>
 

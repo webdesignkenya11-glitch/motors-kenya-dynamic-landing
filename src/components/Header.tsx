@@ -41,7 +41,7 @@ const Header = () => {
           >
             <Car className="w-8 h-8 text-accent" />
             <span className="text-xl font-bold text-primary-foreground">
-              Motors Kenya
+              Auto Cars
             </span>
           </button>
 

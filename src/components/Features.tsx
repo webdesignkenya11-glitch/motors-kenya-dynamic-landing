@@ -24,12 +24,12 @@ const Features = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Why Choose Motors Kenya
+            Why Choose Auto Cars
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            At Motors Kenya, we connect customers with reliable, affordable, and high-performance 
-            vehicles — both personal and commercial. Our mission is to make your next ride simple, 
-            transparent, and exciting.
+            At Auto Cars, we connect customers with reliable, affordable, and high-performance 
+            vehicles — both personal and commercial. With Kenya's largest verified inventory and 
+            transparent pricing, we make your next ride simple, exciting, and worry-free.
           </p>
         </div>
 

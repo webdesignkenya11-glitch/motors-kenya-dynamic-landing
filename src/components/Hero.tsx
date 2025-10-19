@@ -27,7 +27,7 @@ const Hero = () => {
             Drive Your Future Today
           </h1>
           <p className="text-xl md:text-2xl text-primary-foreground/90 font-light">
-            Explore Kenya's trusted marketplace for cars and commercial trucks
+            Kenya's premier auto dealership with the largest selection of verified vehicles
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
             <Button 

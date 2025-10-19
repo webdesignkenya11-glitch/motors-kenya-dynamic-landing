@@ -6,12 +6,12 @@ const Testimonials = () => {
     {
       name: "James Mwangi",
       role: "Business Owner",
-      content: "Got my truck from Motors Kenya — smooth process and great service! The team was professional and transparent throughout.",
+      content: "Got my truck from Auto Cars — smooth process and great service! The team was professional and transparent throughout.",
     },
     {
       name: "Sarah Njeri",
       role: "Private Customer",
-      content: "Honest people, quality cars, no hidden costs. I highly recommend Motors Kenya to anyone looking for a reliable vehicle.",
+      content: "Honest people, quality cars, no hidden costs. I highly recommend Auto Cars to anyone looking for a reliable vehicle.",
     },
     {
       name: "Peter Omondi",

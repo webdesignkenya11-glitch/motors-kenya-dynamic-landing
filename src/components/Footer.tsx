@@ -9,10 +9,10 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Car className="w-8 h-8 text-accent" />
-              <span className="text-2xl font-bold">Motors Kenya</span>
+              <span className="text-2xl font-bold">Auto Cars</span>
             </div>
             <p className="text-primary-foreground/80 text-sm">
-              Kenya's trusted marketplace for quality cars and commercial trucks.
+              Kenya's premier auto dealership for quality cars and commercial trucks.
             </p>
           </div>
 
@@ -42,15 +42,19 @@ const Footer = () => {
           <div>
             <h3 className="font-bold mb-4">Contact</h3>
             <ul className="space-y-2 text-sm text-primary-foreground/80">
-              <li>+254 700 000 000</li>
-              <li>info@motorskenya.com</li>
+              <li>
+                <a href="tel:0720496076" className="hover:text-accent transition-colors">
+                  0720 496 076
+                </a>
+              </li>
+              <li>info@autocars.co.ke</li>
               <li>Nairobi, Kenya</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm text-primary-foreground/60">
-          <p>&copy; {new Date().getFullYear()} Motors Kenya. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Auto Cars. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -2,9 +2,18 @@ import { useState } from "react";
 import { vehicles } from "@/data/vehicles";
 import VehicleCard from "./VehicleCard";
 import { Button } from "@/components/ui/button";
+import VehicleDetailModal from "./VehicleDetailModal";
+import { Vehicle } from "@/data/vehicles";
 
 const VehicleGrid = () => {
   const [filter, setFilter] = useState<"All" | "Car" | "Truck">("All");
+  const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleViewDetails = (vehicle: Vehicle) => {
+    setSelectedVehicle(vehicle);
+    setIsModalOpen(true);
+  };
 
   const filteredVehicles = filter === "All" 
     ? vehicles 
@@ -46,10 +55,20 @@ const VehicleGrid = () => {
         {/* Vehicle Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in">
           {filteredVehicles.map((vehicle) => (
-            <VehicleCard key={vehicle.id} vehicle={vehicle} />
+            <VehicleCard 
+              key={vehicle.id} 
+              vehicle={vehicle} 
+              onViewDetails={handleViewDetails}
+            />
           ))}
         </div>
       </div>
+
+      <VehicleDetailModal 
+        vehicle={selectedVehicle}
+        open={isModalOpen}
+        onOpenChange={setIsModalOpen}
+      />
     </section>
   );
 };
