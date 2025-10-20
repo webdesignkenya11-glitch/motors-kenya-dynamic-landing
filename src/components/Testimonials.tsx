@@ -5,18 +5,18 @@ const Testimonials = () => {
   const testimonials = [
     {
       name: "James Mwangi",
-      role: "Business Owner",
-      content: "Got my truck from Auto Cars — smooth process and great service! The team was professional and transparent throughout.",
+      role: "Construction Manager",
+      content: "Got my dump truck from Equipment NKing — smooth process and great service! The team was professional and transparent throughout.",
     },
     {
       name: "Sarah Njeri",
-      role: "Private Customer",
-      content: "Honest people, quality cars, no hidden costs. I highly recommend Auto Cars to anyone looking for a reliable vehicle.",
+      role: "Logistics Director",
+      content: "Honest people, quality equipment, no hidden costs. I highly recommend Equipment NKing to anyone looking for reliable heavy-duty trucks.",
     },
     {
       name: "Peter Omondi",
       role: "Fleet Manager",
-      content: "We purchased three commercial trucks for our logistics company. Excellent quality and competitive pricing. Very satisfied!",
+      content: "We purchased three cargo trucks for our transport company. Excellent quality and competitive pricing. Very satisfied!",
     },
   ];
 

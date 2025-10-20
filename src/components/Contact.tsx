@@ -19,7 +19,7 @@ const Contact = () => {
     e.preventDefault();
     toast({
       title: "Message Sent!",
-      description: "Thank you for contacting Auto Cars. We'll get back to you soon.",
+      description: "Thank you for contacting Equipment NKing. We'll get back to you soon.",
     });
     setFormData({ name: "", phone: "", email: "", message: "" });
   };
@@ -32,7 +32,7 @@ const Contact = () => {
             Get In Touch
           </h2>
           <p className="text-lg text-muted-foreground">
-            Ready to find your perfect vehicle? Contact us today
+            Ready to find your perfect equipment? Contact us today
           </p>
         </div>
 
@@ -120,8 +120,8 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="font-bold text-card-foreground mb-1">Email</h3>
-                <p className="text-muted-foreground">info@autocars.co.ke</p>
-                <p className="text-muted-foreground">sales@autocars.co.ke</p>
+                <p className="text-muted-foreground">info@equipmentnking.co.ke</p>
+                <p className="text-muted-foreground">sales@equipmentnking.co.ke</p>
               </div>
             </Card>
 

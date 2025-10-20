@@ -23,8 +23,8 @@ const VehicleCard = ({ vehicle, onViewDetails }: VehicleCardProps) => {
           loading="lazy"
         />
         <Badge 
-          variant={vehicle.type === "Car" ? "default" : "secondary"}
-          className="absolute top-4 right-4 font-semibold"
+          variant={vehicle.type === "Tractor" || vehicle.type === "New Energy" ? "default" : "secondary"}
+          className="absolute top-4 right-4 font-semibold text-xs"
         >
           {vehicle.type}
         </Badge>

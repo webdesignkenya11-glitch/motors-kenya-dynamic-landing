@@ -1,4 +1,4 @@
-import { Car } from "lucide-react";
+import { Truck } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -8,11 +8,11 @@ const Footer = () => {
           {/* Logo & Tagline */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Car className="w-8 h-8 text-accent" />
-              <span className="text-2xl font-bold">Auto Cars</span>
+              <Truck className="w-8 h-8 text-accent" />
+              <span className="text-2xl font-bold">Equipment NKing</span>
             </div>
             <p className="text-primary-foreground/80 text-sm">
-              Kenya's premier auto dealership for quality cars and commercial trucks.
+              Kenya's trusted source for heavy-duty trucks and specialized equipment.
             </p>
           </div>
 
@@ -47,14 +47,14 @@ const Footer = () => {
                   0720 496 076
                 </a>
               </li>
-              <li>info@autocars.co.ke</li>
+              <li>info@equipmentnking.co.ke</li>
               <li>Nairobi, Kenya</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm text-primary-foreground/60">
-          <p>&copy; {new Date().getFullYear()} Auto Cars. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Equipment NKing. All rights reserved.</p>
         </div>
       </div>
     </footer>

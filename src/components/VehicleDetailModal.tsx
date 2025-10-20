@@ -29,7 +29,10 @@ const VehicleDetailModal = ({ vehicle, open, onOpenChange }: VehicleDetailModalP
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold flex items-center justify-between">
             <span>{vehicle.name}</span>
-            <Badge variant={vehicle.type === "Car" ? "default" : "secondary"} className="text-sm">
+            <Badge 
+              variant={vehicle.type === "Tractor" || vehicle.type === "New Energy" ? "default" : "secondary"} 
+              className="text-sm"
+            >
               {vehicle.type}
             </Badge>
           </DialogTitle>
@@ -108,11 +111,11 @@ const VehicleDetailModal = ({ vehicle, open, onOpenChange }: VehicleDetailModalP
 
           {/* Full Description */}
           <div>
-            <h3 className="text-lg font-bold mb-3">Vehicle Description</h3>
+            <h3 className="text-lg font-bold mb-3">Equipment Description</h3>
             <p className="text-muted-foreground leading-relaxed">
-              {vehicle.description || `This ${vehicle.name} is in excellent condition and ready for immediate delivery. 
-              All our vehicles undergo rigorous inspection to ensure quality and reliability. 
-              Contact us today to schedule a test drive or for more information.`}
+              {vehicle.description || `This ${vehicle.name} is in excellent condition and ready for immediate deployment. 
+              All our equipment undergoes rigorous inspection to ensure quality and reliability. 
+              Contact us today to schedule a viewing or for more information.`}
             </p>
           </div>
 

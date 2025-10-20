@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Car, Menu, X } from "lucide-react";
+import { Truck, Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,9 +39,9 @@ const Header = () => {
             onClick={scrollToTop}
             className="flex items-center gap-2 hover:opacity-80 transition-opacity"
           >
-            <Car className="w-8 h-8 text-accent" />
+            <Truck className="w-8 h-8 text-accent" />
             <span className="text-xl font-bold text-primary-foreground">
-              Auto Cars
+              Equipment NKing
             </span>
           </button>
 

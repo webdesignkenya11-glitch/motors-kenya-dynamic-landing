@@ -5,12 +5,12 @@ const Features = () => {
     {
       icon: <CheckCircle className="w-12 h-12 text-accent" />,
       title: "Wide Selection",
-      description: "Sedans, SUVs, Pickups & Trucks",
+      description: "Tractors, Dump Trucks, Cargo Trucks & Specialized Equipment",
     },
     {
       icon: <Shield className="w-12 h-12 text-accent" />,
       title: "Quality Assured",
-      description: "Every vehicle inspected & verified",
+      description: "Every machine inspected & certified",
     },
     {
       icon: <Zap className="w-12 h-12 text-accent" />,
@@ -24,12 +24,12 @@ const Features = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Why Choose Auto Cars
+            Why Choose Equipment NKing
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            At Auto Cars, we connect customers with reliable, affordable, and high-performance 
-            vehicles — both personal and commercial. With Kenya's largest verified inventory and 
-            transparent pricing, we make your next ride simple, exciting, and worry-free.
+            At Equipment NKing, we provide reliable, high-performance heavy-duty trucks and 
+            specialized equipment for your business needs. Our mission is to deliver quality, 
+            transparency, and exceptional service.
           </p>
         </div>
 

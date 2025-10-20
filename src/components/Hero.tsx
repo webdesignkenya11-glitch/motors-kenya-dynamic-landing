@@ -24,10 +24,10 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto space-y-8 animate-fade-in-up">
           <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground leading-tight">
-            Drive Your Future Today
+            Power Your Business Forward
           </h1>
           <p className="text-xl md:text-2xl text-primary-foreground/90 font-light">
-            Kenya's premier auto dealership with the largest selection of verified vehicles
+            Kenya's trusted source for heavy-duty trucks and specialized equipment
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
             <Button 
