@@ -24,12 +24,12 @@ const Features = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Why Choose Equipment NKing
+            Why Choose Equipment King Incorporated
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            At Equipment NKing, we provide reliable, high-performance heavy-duty trucks and 
-            specialized equipment for your business needs. Our mission is to deliver quality, 
-            transparency, and exceptional service.
+            With operations across Liberia, Mali, Guinea, and Sierra Leone, Equipment King Incorporated 
+            is your trusted partner for reliable, high-performance heavy-duty trucks and specialized equipment. 
+            We deliver quality, transparency, and exceptional service throughout West Africa.
           </p>
         </div>
 

@@ -24,10 +24,10 @@ const VehicleGrid = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Featured Equipment
+            Our Truck Fleet
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Browse our comprehensive inventory of heavy-duty trucks and specialized equipment
+            Browse our comprehensive inventory of heavy-duty trucks and specialized equipment available across West Africa
           </p>
         </div>
 

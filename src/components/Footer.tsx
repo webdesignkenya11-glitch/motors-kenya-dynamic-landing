@@ -1,4 +1,4 @@
-import { Truck } from "lucide-react";
+import logo from "@/assets/equipment-king-logo.jpg";
 
 const Footer = () => {
   return (
@@ -7,12 +7,15 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Logo & Tagline */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Truck className="w-8 h-8 text-accent" />
-              <span className="text-2xl font-bold">Equipment NKing</span>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={logo} alt="Equipment King Incorporated" className="w-12 h-12 object-contain" />
+              <span className="text-2xl font-bold">Equipment King Inc.</span>
             </div>
-            <p className="text-primary-foreground/80 text-sm">
-              Kenya's trusted source for heavy-duty trucks and specialized equipment.
+            <p className="text-primary-foreground/80 text-sm mb-2">
+              Leading supplier of heavy-duty trucks and specialized equipment across West Africa.
+            </p>
+            <p className="text-primary-foreground/60 text-xs">
+              Liberia 🇱🇷 | Mali 🇲🇱 | Guinea 🇬🇳 | Sierra Leone 🇸🇱
             </p>
           </div>
 
@@ -47,14 +50,14 @@ const Footer = () => {
                   0720 496 076
                 </a>
               </li>
-              <li>info@equipmentnking.co.ke</li>
-              <li>Nairobi, Kenya</li>
+              <li>info@equipmentking.com</li>
+              <li>Monrovia, Liberia (HQ)</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-primary-foreground/20 pt-8 text-center text-sm text-primary-foreground/60">
-          <p>&copy; {new Date().getFullYear()} Equipment NKing. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Equipment King Incorporated. All rights reserved.</p>
         </div>
       </div>
     </footer>

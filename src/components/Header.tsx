@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Truck, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logo from "@/assets/equipment-king-logo.jpg";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,11 +38,11 @@ const Header = () => {
           {/* Logo */}
           <button 
             onClick={scrollToTop}
-            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            className="flex items-center gap-3 hover:opacity-80 transition-opacity"
           >
-            <Truck className="w-8 h-8 text-accent" />
-            <span className="text-xl font-bold text-primary-foreground">
-              Equipment NKing
+            <img src={logo} alt="Equipment King Incorporated" className="w-12 h-12 object-contain" />
+            <span className="text-base md:text-lg font-bold text-primary-foreground">
+              Equipment King Inc.
             </span>
           </button>
 
@@ -57,7 +58,7 @@ const Header = () => {
               onClick={() => scrollToSection("inventory")}
               className="text-primary-foreground hover:text-accent transition-colors font-medium"
             >
-              Inventory
+              Trucks
             </button>
             <button
               onClick={() => scrollToSection("contact")}
@@ -96,7 +97,7 @@ const Header = () => {
                 onClick={() => scrollToSection("inventory")}
                 className="text-primary-foreground hover:text-accent transition-colors font-medium text-left py-2"
               >
-                Inventory
+                Trucks
               </button>
               <button
                 onClick={() => scrollToSection("contact")}

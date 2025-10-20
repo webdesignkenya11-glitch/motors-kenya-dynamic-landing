@@ -5,17 +5,17 @@ const Testimonials = () => {
   const testimonials = [
     {
       name: "James Mwangi",
-      role: "Construction Manager",
-      content: "Got my dump truck from Equipment NKing — smooth process and great service! The team was professional and transparent throughout.",
+      role: "Construction Manager, Liberia",
+      content: "Got my dump truck from Equipment King — smooth process and great service! The team was professional and transparent throughout.",
     },
     {
-      name: "Sarah Njeri",
-      role: "Logistics Director",
-      content: "Honest people, quality equipment, no hidden costs. I highly recommend Equipment NKing to anyone looking for reliable heavy-duty trucks.",
+      name: "Fatou Diallo",
+      role: "Logistics Director, Mali",
+      content: "Honest people, quality equipment, no hidden costs. Equipment King is our trusted partner for all heavy-duty truck needs.",
     },
     {
-      name: "Peter Omondi",
-      role: "Fleet Manager",
+      name: "Mohamed Kamara",
+      role: "Fleet Manager, Sierra Leone",
       content: "We purchased three cargo trucks for our transport company. Excellent quality and competitive pricing. Very satisfied!",
     },
   ];

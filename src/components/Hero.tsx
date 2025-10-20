@@ -22,21 +22,38 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
-        <div className="max-w-4xl mx-auto space-y-8 animate-fade-in-up">
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground leading-tight">
+        <div className="max-w-5xl mx-auto space-y-8">
+          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground leading-tight animate-fade-in">
             Power Your Business Forward
           </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 font-light">
-            Kenya's trusted source for heavy-duty trucks and specialized equipment
+          <p className="text-xl md:text-2xl text-primary-foreground/90 font-light animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+            Leading supplier of heavy-duty trucks and specialized equipment across West Africa
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+          
+          {/* Countries Badge */}
+          <div className="flex flex-wrap justify-center gap-3 pt-4 animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+            <div className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/30 px-4 py-2 rounded-full">
+              <span className="text-primary-foreground font-semibold text-sm">🇱🇷 Liberia (HQ)</span>
+            </div>
+            <div className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/30 px-4 py-2 rounded-full">
+              <span className="text-primary-foreground font-semibold text-sm">🇲🇱 Mali</span>
+            </div>
+            <div className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/30 px-4 py-2 rounded-full">
+              <span className="text-primary-foreground font-semibold text-sm">🇬🇳 Guinea</span>
+            </div>
+            <div className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/30 px-4 py-2 rounded-full">
+              <span className="text-primary-foreground font-semibold text-sm">🇸🇱 Sierra Leone</span>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 animate-scale-in" style={{ animationDelay: "0.6s" }}>
             <Button 
               size="lg" 
               variant="default"
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               onClick={() => scrollToSection('inventory')}
             >
-              Browse Inventory
+              Browse Trucks
             </Button>
             <Button 
               size="lg" 
@@ -47,13 +64,6 @@ const Hero = () => {
               Contact Us
             </Button>
           </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-float">
-        <div className="w-6 h-10 border-2 border-primary-foreground/50 rounded-full flex items-start justify-center p-2">
-          <div className="w-1.5 h-3 bg-primary-foreground/50 rounded-full" />
         </div>
       </div>
     </section>

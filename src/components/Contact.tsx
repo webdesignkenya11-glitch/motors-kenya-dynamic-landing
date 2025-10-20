@@ -19,7 +19,7 @@ const Contact = () => {
     e.preventDefault();
     toast({
       title: "Message Sent!",
-      description: "Thank you for contacting Equipment NKing. We'll get back to you soon.",
+      description: "Thank you for contacting Equipment King Incorporated. We'll get back to you soon.",
     });
     setFormData({ name: "", phone: "", email: "", message: "" });
   };
@@ -120,8 +120,8 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="font-bold text-card-foreground mb-1">Email</h3>
-                <p className="text-muted-foreground">info@equipmentnking.co.ke</p>
-                <p className="text-muted-foreground">sales@equipmentnking.co.ke</p>
+                <p className="text-muted-foreground">info@equipmentking.com</p>
+                <p className="text-muted-foreground">sales@equipmentking.com</p>
               </div>
             </Card>
 
@@ -130,9 +130,9 @@ const Contact = () => {
                 <MapPin className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-bold text-card-foreground mb-1">Location</h3>
-                <p className="text-muted-foreground">Mombasa Road, Industrial Area</p>
-                <p className="text-muted-foreground">Nairobi, Kenya</p>
+                <h3 className="font-bold text-card-foreground mb-1">Headquarters</h3>
+                <p className="text-muted-foreground">Monrovia, Liberia</p>
+                <p className="text-sm text-muted-foreground mt-2">Also serving Mali, Guinea & Sierra Leone</p>
               </div>
             </Card>
 
