@@ -2,22 +2,30 @@ import { useState } from "react";
 import { vehicles } from "@/data/vehicles";
 import VehicleCard from "./VehicleCard";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import VehicleDetailModal from "./VehicleDetailModal";
 import { Vehicle } from "@/data/vehicles";
+import { Search } from "lucide-react";
 
 const VehicleGrid = () => {
   const [filter, setFilter] = useState<"All" | "Tractor" | "Dump Truck" | "Special Vehicle" | "Cargo Truck" | "On-road Truck" | "New Energy">("All");
   const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleViewDetails = (vehicle: Vehicle) => {
     setSelectedVehicle(vehicle);
     setIsModalOpen(true);
   };
 
-  const filteredVehicles = filter === "All" 
-    ? vehicles 
-    : vehicles.filter(v => v.type === filter);
+  const filteredVehicles = vehicles.filter(v => {
+    const matchesFilter = filter === "All" || v.type === filter;
+    const matchesSearch = searchQuery === "" || 
+      v.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      v.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      v.engine.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesFilter && matchesSearch;
+  });
 
   return (
     <section id="inventory" className="py-20 bg-muted/30">
@@ -26,9 +34,21 @@ const VehicleGrid = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Our Truck Fleet
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
             Browse our comprehensive inventory of heavy-duty trucks and specialized equipment available across West Africa
           </p>
+          
+          {/* Search Bar */}
+          <div className="max-w-md mx-auto relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
+            <Input
+              type="text"
+              placeholder="Search trucks by name, type, or engine..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-10 h-12 text-base border-2 focus:border-accent transition-colors"
+            />
+          </div>
         </div>
 
         {/* Filter Buttons */}
