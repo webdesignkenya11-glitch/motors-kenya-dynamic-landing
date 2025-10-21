@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
+import FeaturedTrucks from "@/components/FeaturedTrucks";
 import Testimonials from "@/components/Testimonials";
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
     <>
       <Hero />
       <Features />
+      <FeaturedTrucks />
       <Testimonials />
     </>
   );

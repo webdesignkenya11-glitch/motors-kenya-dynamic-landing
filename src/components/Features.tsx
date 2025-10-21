@@ -1,50 +1,82 @@
-import { CheckCircle, Shield, Zap } from "lucide-react";
+import { Award, Shield, Truck, Wrench, MapPin, DollarSign } from "lucide-react";
 
 const Features = () => {
   const features = [
     {
-      icon: <CheckCircle className="w-12 h-12 text-accent" />,
+      icon: Truck,
       title: "Wide Selection",
-      description: "Tractors, Dump Trucks, Cargo Trucks & Specialized Equipment",
+      description: "Comprehensive inventory of heavy-duty trucks and specialized equipment across all categories",
+      color: "text-blue-500",
     },
     {
-      icon: <Shield className="w-12 h-12 text-accent" />,
+      icon: Shield,
       title: "Quality Assured",
-      description: "Every machine inspected & certified",
+      description: "All equipment undergoes rigorous inspection to ensure reliability and performance",
+      color: "text-green-500",
     },
     {
-      icon: <Zap className="w-12 h-12 text-accent" />,
-      title: "Easy Process",
-      description: "Fast, transparent, and customer-first",
+      icon: Award,
+      title: "Expert Service",
+      description: "Professional support team with decades of combined experience in heavy equipment",
+      color: "text-yellow-500",
+    },
+    {
+      icon: Wrench,
+      title: "Maintenance Support",
+      description: "Comprehensive after-sales service and maintenance support across West Africa",
+      color: "text-red-500",
+    },
+    {
+      icon: MapPin,
+      title: "Regional Coverage",
+      description: "Strategic locations in 4 countries to serve you better across West Africa",
+      color: "text-purple-500",
+    },
+    {
+      icon: DollarSign,
+      title: "Competitive Pricing",
+      description: "Best value for money with flexible payment options and financing solutions",
+      color: "text-orange-500",
     },
   ];
 
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Why Choose Equipment King Incorporated
+    <section className="py-20 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
+      {/* Animated background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-0 w-full h-full" style={{
+          backgroundImage: 'radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)',
+          backgroundSize: '40px 40px'
+        }} />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Why Choose Equipment King
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            With operations across Liberia, Mali, Guinea, and Sierra Leone, Equipment King Incorporated 
-            is your trusted partner for reliable, high-performance heavy-duty trucks and specialized equipment. 
-            We deliver quality, transparency, and exceptional service throughout West Africa.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Delivering excellence in heavy equipment across West Africa
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-card rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-2 animate-fade-in-up border border-border"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="group p-8 rounded-xl bg-card border border-border hover:border-accent transition-all duration-300 animate-fade-in hover-scale hover:shadow-xl"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="flex justify-center mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-bold text-card-foreground mb-3 text-center">
+              <div className="mb-4 relative">
+                <div className={`absolute inset-0 ${feature.color} opacity-20 blur-xl group-hover:opacity-30 transition-opacity rounded-full`} />
+                <feature.icon className={`w-12 h-12 ${feature.color} relative z-10 group-hover:scale-110 transition-transform`} />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-accent transition-colors">
                 {feature.title}
               </h3>
-              <p className="text-muted-foreground text-center">{feature.description}</p>
+              <p className="text-muted-foreground leading-relaxed">
+                {feature.description}
+              </p>
             </div>
           ))}
         </div>
