@@ -7,8 +7,9 @@ import {
 import { Button } from "@/components/ui/button";
 import { Vehicle } from "@/data/vehicles";
 import { Badge } from "@/components/ui/badge";
-import { Phone, Gauge, Settings, MapPin, Calendar, Fuel, Cog } from "lucide-react";
+import { Phone, Gauge, Settings, MapPin, Calendar, Fuel, Cog, ChevronLeft, ChevronRight } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { useState } from "react";
 
 interface VehicleDetailModalProps {
   vehicle: Vehicle | null;
@@ -17,10 +18,20 @@ interface VehicleDetailModalProps {
 }
 
 const VehicleDetailModal = ({ vehicle, open, onOpenChange }: VehicleDetailModalProps) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
   if (!vehicle) return null;
 
   const handleCall = () => {
     window.location.href = "tel:0720496076";
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % vehicle.images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + vehicle.images.length) % vehicle.images.length);
   };
 
   return (
@@ -39,13 +50,63 @@ const VehicleDetailModal = ({ vehicle, open, onOpenChange }: VehicleDetailModalP
         </DialogHeader>
 
         <div className="space-y-6">
-          {/* Main Image */}
-          <div className="relative rounded-lg overflow-hidden aspect-video bg-muted">
-            <img
-              src={vehicle.image}
-              alt={vehicle.name}
-              className="w-full h-full object-cover"
-            />
+          {/* Image Gallery */}
+          <div className="space-y-3">
+            <div className="relative rounded-lg overflow-hidden aspect-video bg-muted group">
+              <img
+                src={vehicle.images[currentImageIndex]}
+                alt={`${vehicle.name} - View ${currentImageIndex + 1}`}
+                className="w-full h-full object-cover"
+              />
+              
+              {/* Navigation arrows */}
+              {vehicle.images.length > 1 && (
+                <>
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
+                  
+                  {/* Image counter */}
+                  <div className="absolute bottom-4 right-4 bg-black/70 text-white px-3 py-1 rounded-full text-sm">
+                    {currentImageIndex + 1} / {vehicle.images.length}
+                  </div>
+                </>
+              )}
+            </div>
+            
+            {/* Thumbnail navigation */}
+            {vehicle.images.length > 1 && (
+              <div className="flex gap-2 overflow-x-auto pb-2">
+                {vehicle.images.map((img, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
+                      index === currentImageIndex
+                        ? 'border-accent scale-105'
+                        : 'border-transparent hover:border-muted-foreground/30'
+                    }`}
+                  >
+                    <img
+                      src={img}
+                      alt={`${vehicle.name} thumbnail ${index + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Price */}

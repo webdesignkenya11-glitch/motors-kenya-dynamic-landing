@@ -17,12 +17,12 @@ const VehicleCard = ({ vehicle, onViewDetails }: VehicleCardProps) => {
       {/* Image Container */}
       <div className="relative overflow-hidden aspect-[4/3] bg-muted">
         <img
-          src={vehicle.image}
+          src={vehicle.images[0]}
           alt={vehicle.name}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           loading="lazy"
         />
-        <Badge 
+        <Badge
           variant={vehicle.type === "Tractor" || vehicle.type === "New Energy" ? "default" : "secondary"}
           className="absolute top-4 right-4 font-semibold text-xs"
         >
