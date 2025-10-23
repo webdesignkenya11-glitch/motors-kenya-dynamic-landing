@@ -15,7 +15,7 @@ const Hero = () => {
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/90 to-primary/85" />
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary/90 via-primary/85 to-secondary/90" />
       </div>
 
       {/* Animated floating elements */}
@@ -29,13 +29,13 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-5xl mx-auto space-y-8">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-accent/20 backdrop-blur-sm border border-accent/30 px-4 py-2 rounded-full mb-4 animate-fade-in">
-            <Truck className="w-4 h-4 text-accent" />
+          <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 px-4 py-2 rounded-full mb-4 animate-fade-in">
+            <Truck className="w-4 h-4 text-primary-foreground" />
             <span className="text-sm font-semibold text-primary-foreground">Serving West Africa Since 2010</span>
           </div>
 
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-primary-foreground leading-tight animate-fade-in delay-100">
-            Equipment King <span className="text-accent">Incorporated</span>
+            Equipment King <span className="text-primary-foreground/90">Incorporated</span>
           </h1>
           <p className="text-2xl md:text-3xl lg:text-4xl text-primary-foreground/90 font-medium animate-fade-in delay-200">
             West Africa's Premier Heavy Equipment Supplier
@@ -62,7 +62,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="default"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+                className="bg-primary-foreground hover:bg-primary-foreground/90 text-secondary font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
               >
                 Browse Equipment
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -72,7 +72,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+                className="border-2 border-primary-foreground/80 text-primary-foreground hover:bg-primary-foreground/10 font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105 backdrop-blur-sm"
               >
                 Contact Us
               </Button>

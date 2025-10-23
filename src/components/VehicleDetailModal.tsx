@@ -112,7 +112,7 @@ const VehicleDetailModal = ({ vehicle, open, onOpenChange }: VehicleDetailModalP
           {/* Price */}
           <div className="bg-accent/10 rounded-lg p-6 border-2 border-accent">
             <p className="text-sm text-muted-foreground mb-1">Price</p>
-            <p className="text-4xl font-bold text-accent">{vehicle.price}</p>
+            <p className="text-4xl font-bold text-accent">$</p>
           </div>
 
           {/* Key Specifications */}
