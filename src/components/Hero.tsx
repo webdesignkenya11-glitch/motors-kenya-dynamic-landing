@@ -34,10 +34,10 @@ const Hero = () => {
             <span className="text-sm font-semibold text-primary-foreground">Serving West Africa Since 2010</span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground leading-tight animate-fade-in delay-100">
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-primary-foreground leading-tight animate-fade-in delay-100">
             Equipment King <span className="text-accent">Incorporated</span>
           </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 font-medium animate-fade-in delay-200">
+          <p className="text-2xl md:text-3xl lg:text-4xl text-primary-foreground/90 font-medium animate-fade-in delay-200">
             West Africa's Premier Heavy Equipment Supplier
           </p>
           

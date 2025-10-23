@@ -24,7 +24,7 @@ const FeaturedTrucks = () => {
   ].filter(Boolean) as Vehicle[];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/30 relative overflow-hidden">
+    <section className="py-12 md:py-20 bg-gradient-to-b from-background to-muted/30 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse" />
@@ -33,10 +33,10 @@ const FeaturedTrucks = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 animate-fade-in">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 animate-fade-in">
             Featured Equipment
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in delay-100">
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4 animate-fade-in delay-100">
             Discover our premium selection of heavy-duty trucks and specialized machinery
           </p>
         </div>

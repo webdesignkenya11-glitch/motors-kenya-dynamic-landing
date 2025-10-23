@@ -41,7 +41,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
+    <section className="py-12 md:py-20 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
       {/* Animated background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-full h-full" style={{
@@ -51,11 +51,11 @@ const Features = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+        <div className="text-center mb-12 md:mb-16 animate-fade-in">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Why Choose Equipment King
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Delivering excellence in heavy equipment across West Africa
           </p>
         </div>

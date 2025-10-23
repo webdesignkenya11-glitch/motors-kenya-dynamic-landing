@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/equipment-king-logo.jpg";
+import logoImage from "@/assets/equipmentking-logo.png";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,10 +36,10 @@ const Header = () => {
           {/* Logo */}
           <Link 
             to="/"
-            className="flex items-center gap-3 hover:opacity-80 transition-opacity group"
+            className="flex items-center gap-2 md:gap-3 hover:opacity-80 transition-opacity group"
           >
-            <img src={logo} alt="Equipment King Incorporated" className="w-12 h-12 object-contain transition-transform group-hover:scale-105" />
-            <span className="text-base md:text-lg font-bold text-primary">
+            <img src={logoImage} alt="Equipment King Incorporated" className="w-14 h-14 md:w-20 md:h-20 object-contain transition-transform group-hover:scale-105" />
+            <span className="text-base md:text-xl lg:text-2xl font-bold text-primary">
               Equipment King Inc.
             </span>
           </Link>
