@@ -27,8 +27,8 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? "bg-primary/95 backdrop-blur-md shadow-lg" 
-          : "bg-transparent"
+          ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-border" 
+          : "bg-white/90 backdrop-blur-sm shadow-md border-b border-border/50"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -39,7 +39,7 @@ const Header = () => {
             className="flex items-center gap-3 hover:opacity-80 transition-opacity group"
           >
             <img src={logo} alt="Equipment King Incorporated" className="w-12 h-12 object-contain transition-transform group-hover:scale-105" />
-            <span className="text-base md:text-lg font-bold text-primary-foreground">
+            <span className="text-base md:text-lg font-bold text-primary">
               Equipment King Inc.
             </span>
           </Link>
@@ -48,8 +48,8 @@ const Header = () => {
           <nav className="hidden md:flex items-center gap-2">
             <Link
               to="/"
-              className={`px-4 py-2 rounded-md text-primary-foreground font-medium transition-all duration-300 relative group ${
-                isActive("/") ? "text-accent" : "hover:text-accent"
+              className={`px-4 py-2 rounded-md font-medium transition-all duration-300 relative group ${
+                isActive("/") ? "text-accent bg-accent/10" : "text-foreground hover:text-accent hover:bg-accent/5"
               }`}
             >
               Home
@@ -59,8 +59,8 @@ const Header = () => {
             </Link>
             <Link
               to="/trucks"
-              className={`px-4 py-2 rounded-md text-primary-foreground font-medium transition-all duration-300 relative group ${
-                isActive("/trucks") ? "text-accent" : "hover:text-accent"
+              className={`px-4 py-2 rounded-md font-medium transition-all duration-300 relative group ${
+                isActive("/trucks") ? "text-accent bg-accent/10" : "text-foreground hover:text-accent hover:bg-accent/5"
               }`}
             >
               Trucks
@@ -70,8 +70,8 @@ const Header = () => {
             </Link>
             <Link
               to="/contact"
-              className={`px-4 py-2 rounded-md text-primary-foreground font-medium transition-all duration-300 relative group ${
-                isActive("/contact") ? "text-accent" : "hover:text-accent"
+              className={`px-4 py-2 rounded-md font-medium transition-all duration-300 relative group ${
+                isActive("/contact") ? "text-accent bg-accent/10" : "text-foreground hover:text-accent hover:bg-accent/5"
               }`}
             >
               Contact
@@ -91,7 +91,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-primary-foreground p-2 hover:bg-primary-foreground/10 rounded-md transition-colors"
+            className="md:hidden text-foreground p-2 hover:bg-accent/10 rounded-md transition-colors"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -99,13 +99,13 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-primary-foreground/20 animate-fade-in">
+          <nav className="md:hidden py-4 border-t border-border animate-fade-in bg-white/95 backdrop-blur-md">
             <div className="flex flex-col gap-2">
               <Link
                 to="/"
                 onClick={closeMobileMenu}
-                className={`px-4 py-3 rounded-md text-primary-foreground font-medium text-left transition-colors ${
-                  isActive("/") ? "bg-accent/20 text-accent" : "hover:bg-primary-foreground/10"
+                className={`px-4 py-3 rounded-md font-medium text-left transition-colors ${
+                  isActive("/") ? "bg-accent/10 text-accent" : "text-foreground hover:bg-accent/5"
                 }`}
               >
                 Home
@@ -113,8 +113,8 @@ const Header = () => {
               <Link
                 to="/trucks"
                 onClick={closeMobileMenu}
-                className={`px-4 py-3 rounded-md text-primary-foreground font-medium text-left transition-colors ${
-                  isActive("/trucks") ? "bg-accent/20 text-accent" : "hover:bg-primary-foreground/10"
+                className={`px-4 py-3 rounded-md font-medium text-left transition-colors ${
+                  isActive("/trucks") ? "bg-accent/10 text-accent" : "text-foreground hover:bg-accent/5"
                 }`}
               >
                 Trucks
@@ -122,8 +122,8 @@ const Header = () => {
               <Link
                 to="/contact"
                 onClick={closeMobileMenu}
-                className={`px-4 py-3 rounded-md text-primary-foreground font-medium text-left transition-colors ${
-                  isActive("/contact") ? "bg-accent/20 text-accent" : "hover:bg-primary-foreground/10"
+                className={`px-4 py-3 rounded-md font-medium text-left transition-colors ${
+                  isActive("/contact") ? "bg-accent/10 text-accent" : "text-foreground hover:bg-accent/5"
                 }`}
               >
                 Contact

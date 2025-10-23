@@ -54,7 +54,7 @@ const VehicleCard = ({ vehicle, onViewDetails }: VehicleCardProps) => {
         <div className="pt-4 border-t border-border flex items-center justify-between">
           <div>
             <p className="text-sm text-muted-foreground">Price</p>
-            <p className="text-2xl font-bold text-accent">{vehicle.price}</p>
+            <p className="text-3xl font-bold text-accent">$</p>
           </div>
           <Button 
             variant="default"
