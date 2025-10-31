@@ -69,6 +69,28 @@ const Header = () => {
               }`} />
             </Link>
             <Link
+              to="/variants"
+              className={`px-4 py-2 rounded-md font-medium transition-all duration-300 relative group ${
+                isActive("/variants") ? "text-accent bg-accent/10" : "text-foreground hover:text-accent hover:bg-accent/5"
+              }`}
+            >
+              Variants
+              <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-accent transition-transform duration-300 ${
+                isActive("/variants") ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+              }`} />
+            </Link>
+            <Link
+              to="/about"
+              className={`px-4 py-2 rounded-md font-medium transition-all duration-300 relative group ${
+                isActive("/about") ? "text-accent bg-accent/10" : "text-foreground hover:text-accent hover:bg-accent/5"
+              }`}
+            >
+              About
+              <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-accent transition-transform duration-300 ${
+                isActive("/about") ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+              }`} />
+            </Link>
+            <Link
               to="/contact"
               className={`px-4 py-2 rounded-md font-medium transition-all duration-300 relative group ${
                 isActive("/contact") ? "text-accent bg-accent/10" : "text-foreground hover:text-accent hover:bg-accent/5"
@@ -79,13 +101,13 @@ const Header = () => {
                 isActive("/contact") ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
               }`} />
             </Link>
-            <Link to="/contact">
+            <a href="https://wa.me/0720496076" target="_blank" rel="noopener noreferrer">
               <Button
                 className="ml-4 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 Get Started
               </Button>
-            </Link>
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -120,6 +142,24 @@ const Header = () => {
                 Trucks
               </Link>
               <Link
+                to="/variants"
+                onClick={closeMobileMenu}
+                className={`px-4 py-3 rounded-md font-medium text-left transition-colors ${
+                  isActive("/variants") ? "bg-accent/10 text-accent" : "text-foreground hover:bg-accent/5"
+                }`}
+              >
+                Variants
+              </Link>
+              <Link
+                to="/about"
+                onClick={closeMobileMenu}
+                className={`px-4 py-3 rounded-md font-medium text-left transition-colors ${
+                  isActive("/about") ? "bg-accent/10 text-accent" : "text-foreground hover:bg-accent/5"
+                }`}
+              >
+                About
+              </Link>
+              <Link
                 to="/contact"
                 onClick={closeMobileMenu}
                 className={`px-4 py-3 rounded-md font-medium text-left transition-colors ${
@@ -128,13 +168,13 @@ const Header = () => {
               >
                 Contact
               </Link>
-              <Link to="/contact" onClick={closeMobileMenu}>
+              <a href="https://wa.me/0720496076" target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>
                 <Button
                   className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full mt-2"
                 >
                   Get Started
                 </Button>
-              </Link>
+              </a>
             </div>
           </nav>
         )}
