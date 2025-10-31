@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import logoImage from "@/assets/equipmentking-logo.png";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,7 +54,7 @@ const Header = () => {
                 isActive("/") ? "text-accent bg-accent/10" : "text-foreground hover:text-accent hover:bg-accent/5"
               }`}
             >
-              Home
+              {t("home")}
               <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-accent transition-transform duration-300 ${
                 isActive("/") ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
               }`} />
@@ -63,7 +65,7 @@ const Header = () => {
                 isActive("/trucks") ? "text-accent bg-accent/10" : "text-foreground hover:text-accent hover:bg-accent/5"
               }`}
             >
-              Trucks
+              {t("trucks")}
               <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-accent transition-transform duration-300 ${
                 isActive("/trucks") ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
               }`} />
@@ -74,7 +76,7 @@ const Header = () => {
                 isActive("/variants") ? "text-accent bg-accent/10" : "text-foreground hover:text-accent hover:bg-accent/5"
               }`}
             >
-              Variants
+              {t("variants")}
               <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-accent transition-transform duration-300 ${
                 isActive("/variants") ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
               }`} />
@@ -85,7 +87,7 @@ const Header = () => {
                 isActive("/about") ? "text-accent bg-accent/10" : "text-foreground hover:text-accent hover:bg-accent/5"
               }`}
             >
-              About
+              {t("about")}
               <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-accent transition-transform duration-300 ${
                 isActive("/about") ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
               }`} />
@@ -96,16 +98,25 @@ const Header = () => {
                 isActive("/contact") ? "text-accent bg-accent/10" : "text-foreground hover:text-accent hover:bg-accent/5"
               }`}
             >
-              Contact
+              {t("contact")}
               <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-accent transition-transform duration-300 ${
                 isActive("/contact") ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
               }`} />
             </Link>
+            <Button
+              onClick={toggleLanguage}
+              variant="outline"
+              size="sm"
+              className="ml-2 font-semibold"
+            >
+              <Globe className="w-4 h-4 mr-2" />
+              {language.toUpperCase()}
+            </Button>
             <a href="https://wa.me/0720496076" target="_blank" rel="noopener noreferrer">
               <Button
                 className="ml-4 bg-accent hover:bg-accent/90 text-accent-foreground font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                Get Started
+                {t("getStarted")}
               </Button>
             </a>
           </nav>
@@ -130,7 +141,7 @@ const Header = () => {
                   isActive("/") ? "bg-accent/10 text-accent" : "text-foreground hover:bg-accent/5"
                 }`}
               >
-                Home
+                {t("home")}
               </Link>
               <Link
                 to="/trucks"
@@ -139,7 +150,7 @@ const Header = () => {
                   isActive("/trucks") ? "bg-accent/10 text-accent" : "text-foreground hover:bg-accent/5"
                 }`}
               >
-                Trucks
+                {t("trucks")}
               </Link>
               <Link
                 to="/variants"
@@ -148,7 +159,7 @@ const Header = () => {
                   isActive("/variants") ? "bg-accent/10 text-accent" : "text-foreground hover:bg-accent/5"
                 }`}
               >
-                Variants
+                {t("variants")}
               </Link>
               <Link
                 to="/about"
@@ -157,7 +168,7 @@ const Header = () => {
                   isActive("/about") ? "bg-accent/10 text-accent" : "text-foreground hover:bg-accent/5"
                 }`}
               >
-                About
+                {t("about")}
               </Link>
               <Link
                 to="/contact"
@@ -166,13 +177,21 @@ const Header = () => {
                   isActive("/contact") ? "bg-accent/10 text-accent" : "text-foreground hover:bg-accent/5"
                 }`}
               >
-                Contact
+                {t("contact")}
               </Link>
+              <Button
+                onClick={toggleLanguage}
+                variant="outline"
+                className="w-full font-semibold"
+              >
+                <Globe className="w-4 h-4 mr-2" />
+                {language.toUpperCase()}
+              </Button>
               <a href="https://wa.me/0720496076" target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>
                 <Button
                   className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold w-full mt-2"
                 >
-                  Get Started
+                  {t("getStarted")}
                 </Button>
               </a>
             </div>
