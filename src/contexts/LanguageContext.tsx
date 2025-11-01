@@ -98,6 +98,50 @@ const translations = {
     cargoTrucks: "Cargo Trucks",
     specialVehicles: "Special Vehicles",
     contactPrice: "Contact for price",
+    
+    // Features
+    whyChooseEquipmentKing: "Why Choose Equipment King",
+    deliveringExcellence: "Delivering excellence in heavy equipment across West Africa",
+    wideSelection: "Wide Selection",
+    wideSelectionText: "Comprehensive inventory of heavy-duty trucks and specialized equipment across all categories",
+    qualityAssured: "Quality Assured",
+    qualityAssuredText: "All equipment undergoes rigorous inspection to ensure reliability and performance",
+    expertService: "Expert Service",
+    expertServiceText: "Professional support team with decades of combined experience in heavy equipment",
+    maintenanceSupport: "Maintenance Support",
+    maintenanceSupportText: "Comprehensive after-sales service and maintenance support across West Africa",
+    regionalCoverageTitle: "Regional Coverage",
+    regionalCoverageText: "Strategic locations in 4 countries to serve you better across West Africa",
+    competitivePricingTitle: "Competitive Pricing",
+    competitivePricingText: "Best value for money with flexible payment options and financing solutions",
+    
+    // Featured Trucks
+    featuredEquipment: "Featured Equipment",
+    discoverPremium: "Discover our premium selection of heavy-duty trucks and specialized machinery",
+    viewFullInventory: "View Full Inventory",
+    
+    // Testimonials
+    whatClientsSay: "What Our Clients Say",
+    trustedByCompanies: "Trusted by leading companies across West Africa",
+    
+    // Contact
+    getInTouch: "Get In Touch",
+    readyToFind: "Ready to find your perfect equipment? Contact us today",
+    fullName: "Full Name",
+    phoneNumber: "Phone Number",
+    emailAddress: "Email Address",
+    message: "Message",
+    sendMessage: "Send Message",
+    phone: "Phone",
+    email: "Email",
+    headquarters: "Headquarters",
+    monroviaHQ: "Monrovia, Liberia (HQ)",
+    alsoServing: "Also serving Mali, Guinea & Sierra Leone",
+    followUs: "Follow Us",
+    mapLocation: "Map Location",
+    messageSent: "Message Sent!",
+    thankYouMessage: "Thank you for contacting Equipment King Incorporated. We'll get back to you soon.",
+    tellUsRequirements: "Tell us about your requirements...",
   },
   fr: {
     // Header
@@ -186,6 +230,50 @@ const translations = {
     cargoTrucks: "Camions de Fret",
     specialVehicles: "Véhicules Spéciaux",
     contactPrice: "Contactez pour le prix",
+    
+    // Features
+    whyChooseEquipmentKing: "Pourquoi Choisir Equipment King",
+    deliveringExcellence: "Excellence dans les équipements lourds en Afrique de l'Ouest",
+    wideSelection: "Large Sélection",
+    wideSelectionText: "Inventaire complet de camions lourds et d'équipements spécialisés dans toutes les catégories",
+    qualityAssured: "Qualité Assurée",
+    qualityAssuredText: "Tous les équipements subissent une inspection rigoureuse pour garantir fiabilité et performance",
+    expertService: "Service Expert",
+    expertServiceText: "Équipe de support professionnelle avec des décennies d'expérience combinée en équipements lourds",
+    maintenanceSupport: "Support de Maintenance",
+    maintenanceSupportText: "Service après-vente complet et support de maintenance à travers l'Afrique de l'Ouest",
+    regionalCoverageTitle: "Couverture Régionale",
+    regionalCoverageText: "Emplacements stratégiques dans 4 pays pour mieux vous servir en Afrique de l'Ouest",
+    competitivePricingTitle: "Prix Compétitifs",
+    competitivePricingText: "Meilleur rapport qualité-prix avec options de paiement flexibles et solutions de financement",
+    
+    // Featured Trucks
+    featuredEquipment: "Équipements en Vedette",
+    discoverPremium: "Découvrez notre sélection premium de camions lourds et de machines spécialisées",
+    viewFullInventory: "Voir l'Inventaire Complet",
+    
+    // Testimonials
+    whatClientsSay: "Ce Que Disent Nos Clients",
+    trustedByCompanies: "Approuvé par les principales entreprises d'Afrique de l'Ouest",
+    
+    // Contact
+    getInTouch: "Contactez-Nous",
+    readyToFind: "Prêt à trouver votre équipement parfait? Contactez-nous aujourd'hui",
+    fullName: "Nom Complet",
+    phoneNumber: "Numéro de Téléphone",
+    emailAddress: "Adresse Email",
+    message: "Message",
+    sendMessage: "Envoyer le Message",
+    phone: "Téléphone",
+    email: "Email",
+    headquarters: "Siège Social",
+    monroviaHQ: "Monrovia, Libéria (Siège)",
+    alsoServing: "Servant également le Mali, la Guinée et la Sierra Leone",
+    followUs: "Suivez-Nous",
+    mapLocation: "Emplacement sur la Carte",
+    messageSent: "Message Envoyé!",
+    thankYouMessage: "Merci d'avoir contacté Equipment King Incorporated. Nous vous répondrons bientôt.",
+    tellUsRequirements: "Parlez-nous de vos besoins...",
   },
 };
 

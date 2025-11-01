@@ -5,9 +5,11 @@ import { Card } from "@/components/ui/card";
 import { Phone, Mail, MapPin, Facebook, Twitter, Instagram } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
   const { toast } = useToast();
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -18,8 +20,8 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting Equipment King Incorporated. We'll get back to you soon.",
+      title: t("messageSent"),
+      description: t("thankYouMessage"),
     });
     setFormData({ name: "", phone: "", email: "", message: "" });
   };
@@ -29,10 +31,10 @@ const Contact = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Get In Touch
+            {t("getInTouch")}
           </h2>
           <p className="text-lg text-muted-foreground">
-            Ready to find your perfect equipment? Contact us today
+            {t("readyToFind")}
           </p>
         </div>
 
@@ -42,7 +44,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-semibold text-card-foreground mb-2">
-                  Full Name *
+                  {t("fullName")} *
                 </label>
                 <Input
                   required
@@ -54,7 +56,7 @@ const Contact = () => {
               </div>
               <div>
                 <label className="block text-sm font-semibold text-card-foreground mb-2">
-                  Phone Number *
+                  {t("phoneNumber")} *
                 </label>
                 <Input
                   required
@@ -67,7 +69,7 @@ const Contact = () => {
               </div>
               <div>
                 <label className="block text-sm font-semibold text-card-foreground mb-2">
-                  Email Address *
+                  {t("emailAddress")} *
                 </label>
                 <Input
                   required
@@ -80,13 +82,13 @@ const Contact = () => {
               </div>
               <div>
                 <label className="block text-sm font-semibold text-card-foreground mb-2">
-                  Message *
+                  {t("message")} *
                 </label>
                 <Textarea
                   required
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  placeholder="Tell us about your requirements..."
+                  placeholder={t("tellUsRequirements")}
                   rows={5}
                   className="border-border resize-none"
                 />
@@ -96,7 +98,7 @@ const Contact = () => {
                 size="lg"
                 className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold py-6 text-base transition-all duration-300 hover:scale-[1.02]"
               >
-                Send Message
+                {t("sendMessage")}
               </Button>
             </form>
           </Card>
@@ -108,7 +110,7 @@ const Contact = () => {
                 <Phone className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-bold text-card-foreground mb-1">Phone</h3>
+                <h3 className="font-bold text-card-foreground mb-1">{t("phone")}</h3>
                 <a href="tel:0720496076" className="text-muted-foreground hover:text-accent transition-colors">0720 496 076</a>
                 <p className="text-muted-foreground">+254 711 111 111</p>
               </div>
@@ -119,7 +121,7 @@ const Contact = () => {
                 <Mail className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-bold text-card-foreground mb-1">Email</h3>
+                <h3 className="font-bold text-card-foreground mb-1">{t("email")}</h3>
                 <p className="text-muted-foreground">info@equipmentking.com</p>
                 <p className="text-muted-foreground">sales@equipmentking.com</p>
               </div>
@@ -130,15 +132,15 @@ const Contact = () => {
                 <MapPin className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-bold text-card-foreground mb-1">Headquarters</h3>
-                <p className="text-muted-foreground">Monrovia, Liberia</p>
-                <p className="text-sm text-muted-foreground mt-2">Also serving Mali, Guinea & Sierra Leone</p>
+                <h3 className="font-bold text-card-foreground mb-1">{t("headquarters")}</h3>
+                <p className="text-muted-foreground font-semibold">{t("monroviaHQ")}</p>
+                <p className="text-sm text-muted-foreground mt-2">{t("alsoServing")}</p>
               </div>
             </Card>
 
             {/* Social Media */}
             <div className="pt-4">
-              <h3 className="font-bold text-card-foreground mb-4">Follow Us</h3>
+              <h3 className="font-bold text-card-foreground mb-4">{t("followUs")}</h3>
               <div className="flex gap-4">
                 <a 
                   href="#" 
@@ -163,8 +165,10 @@ const Contact = () => {
 
             {/* Map Placeholder */}
             <Card className="p-4 bg-card border border-border overflow-hidden">
-              <div className="bg-muted rounded-lg h-64 flex items-center justify-center">
-                <p className="text-muted-foreground">Map Location</p>
+              <div className="bg-muted rounded-lg h-64 flex flex-col items-center justify-center gap-2">
+                <MapPin className="w-12 h-12 text-accent" />
+                <p className="text-foreground font-semibold">{t("mapLocation")}</p>
+                <p className="text-muted-foreground text-sm">{t("monroviaHQ")}</p>
               </div>
             </Card>
           </div>

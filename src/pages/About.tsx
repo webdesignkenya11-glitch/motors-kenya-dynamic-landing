@@ -2,8 +2,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Truck, Globe, Users, Award, Target, CheckCircle } from "lucide-react";
 import logoImage from "@/assets/equipmentking-logo.png";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const About = () => {
+  const { t } = useLanguage();
   return (
     <div className="pt-24 pb-16 bg-background">
       <div className="container mx-auto px-4">
@@ -13,10 +15,10 @@ const About = () => {
             <img src={logoImage} alt="Equipment King Incorporated" className="w-32 h-32 object-contain" />
           </div>
           <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
-            About <span className="text-accent">Equipment King</span>
+            {t("aboutEquipmentKing")}
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            West Africa's trusted partner in heavy equipment supply since 2010
+            {t("trustedPartner")}
           </p>
         </div>
 
@@ -28,12 +30,10 @@ const About = () => {
                 <div className="p-3 bg-accent/10 rounded-lg">
                   <Target className="w-8 h-8 text-accent" />
                 </div>
-                <h2 className="text-3xl font-bold text-foreground">Our Mission</h2>
+                <h2 className="text-3xl font-bold text-foreground">{t("ourMission")}</h2>
               </div>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                To provide West Africa with world-class heavy equipment solutions that drive infrastructure development, 
-                economic growth, and prosperity across the region. We are committed to delivering quality vehicles and 
-                exceptional service to our valued customers.
+                {t("missionText")}
               </p>
             </CardContent>
           </Card>
@@ -44,12 +44,10 @@ const About = () => {
                 <div className="p-3 bg-accent/10 rounded-lg">
                   <Award className="w-8 h-8 text-accent" />
                 </div>
-                <h2 className="text-3xl font-bold text-foreground">Our Vision</h2>
+                <h2 className="text-3xl font-bold text-foreground">{t("ourVision")}</h2>
               </div>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                To become the premier heavy equipment supplier across West Africa, recognized for our reliability, 
-                integrity, and commitment to customer success. We envision a future where our equipment powers 
-                every major development project in the region.
+                {t("visionText")}
               </p>
             </CardContent>
           </Card>
@@ -60,25 +58,25 @@ const About = () => {
           <Card className="text-center p-6 border-2 hover:border-accent transition-all duration-300 hover:-translate-y-1">
             <CardContent className="p-0">
               <div className="text-5xl font-bold text-accent mb-2">15+</div>
-              <p className="text-muted-foreground font-medium">Years Experience</p>
+              <p className="text-muted-foreground font-medium">{t("yearsExperience")}</p>
             </CardContent>
           </Card>
           <Card className="text-center p-6 border-2 hover:border-accent transition-all duration-300 hover:-translate-y-1">
             <CardContent className="p-0">
               <div className="text-5xl font-bold text-accent mb-2">500+</div>
-              <p className="text-muted-foreground font-medium">Vehicles Sold</p>
+              <p className="text-muted-foreground font-medium">{t("vehiclesSold")}</p>
             </CardContent>
           </Card>
           <Card className="text-center p-6 border-2 hover:border-accent transition-all duration-300 hover:-translate-y-1">
             <CardContent className="p-0">
               <div className="text-5xl font-bold text-accent mb-2">4</div>
-              <p className="text-muted-foreground font-medium">Countries Served</p>
+              <p className="text-muted-foreground font-medium">{t("countriesServed")}</p>
             </CardContent>
           </Card>
           <Card className="text-center p-6 border-2 hover:border-accent transition-all duration-300 hover:-translate-y-1">
             <CardContent className="p-0">
               <div className="text-5xl font-bold text-accent mb-2">100%</div>
-              <p className="text-muted-foreground font-medium">Customer Satisfaction</p>
+              <p className="text-muted-foreground font-medium">{t("customerSatisfaction")}</p>
             </CardContent>
           </Card>
         </div>
@@ -91,7 +89,7 @@ const About = () => {
                 <div className="p-3 bg-accent/10 rounded-lg">
                   <Globe className="w-8 h-8 text-accent" />
                 </div>
-                <h2 className="text-3xl font-bold text-foreground">Regional Coverage</h2>
+                <h2 className="text-3xl font-bold text-foreground">{t("regionalCoverage")}</h2>
               </div>
               <div className="space-y-3">
                 {["Liberia", "Mali", "Guinea", "Sierra Leone"].map((country) => (
@@ -110,7 +108,7 @@ const About = () => {
                 <div className="p-3 bg-accent/10 rounded-lg">
                   <Truck className="w-8 h-8 text-accent" />
                 </div>
-                <h2 className="text-3xl font-bold text-foreground">Equipment Range</h2>
+                <h2 className="text-3xl font-bold text-foreground">{t("equipmentRange")}</h2>
               </div>
               <div className="space-y-3">
                 {["Dump Trucks", "Cargo Trucks", "Special Vehicles", "Tractors", "On-road Trucks", "New Energy Vehicles"].map((type) => (
@@ -133,29 +131,29 @@ const About = () => {
                   <Users className="w-12 h-12 text-accent" />
                 </div>
               </div>
-              <h2 className="text-4xl font-bold text-foreground mb-4">Why Choose Equipment King?</h2>
+              <h2 className="text-4xl font-bold text-foreground mb-4">{t("whyChooseUs")}</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                We stand out as the preferred heavy equipment supplier in West Africa
+                {t("preferredSupplier")}
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6">
               <div className="text-center p-6">
-                <Badge className="bg-accent text-accent-foreground mb-4 text-lg px-4 py-2">Quality Assurance</Badge>
+                <Badge className="bg-accent text-accent-foreground mb-4 text-lg px-4 py-2">{t("qualityAssurance")}</Badge>
                 <p className="text-muted-foreground">
-                  All vehicles undergo rigorous inspection to ensure top quality and reliability
+                  {t("qualityText")}
                 </p>
               </div>
               <div className="text-center p-6">
-                <Badge className="bg-accent text-accent-foreground mb-4 text-lg px-4 py-2">Competitive Pricing</Badge>
+                <Badge className="bg-accent text-accent-foreground mb-4 text-lg px-4 py-2">{t("competitivePricing")}</Badge>
                 <p className="text-muted-foreground">
-                  Best value for money with transparent pricing and flexible payment options
+                  {t("pricingText")}
                 </p>
               </div>
               <div className="text-center p-6">
-                <Badge className="bg-accent text-accent-foreground mb-4 text-lg px-4 py-2">Expert Support</Badge>
+                <Badge className="bg-accent text-accent-foreground mb-4 text-lg px-4 py-2">{t("expertSupport")}</Badge>
                 <p className="text-muted-foreground">
-                  Dedicated team providing guidance from selection to after-sales service
+                  {t("supportText")}
                 </p>
               </div>
             </div>
@@ -164,18 +162,18 @@ const About = () => {
 
         {/* Company Values */}
         <div className="mt-16 text-center">
-          <h2 className="text-4xl font-bold text-foreground mb-8">Our Core Values</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-8">{t("ourCoreValues")}</h2>
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { title: "Integrity", desc: "Honest and transparent in all dealings" },
-              { title: "Excellence", desc: "Committed to the highest standards" },
-              { title: "Reliability", desc: "Dependable partner you can trust" },
-              { title: "Innovation", desc: "Embracing new solutions and technologies" }
+              { titleKey: "integrity", descKey: "integrityText" },
+              { titleKey: "excellence", descKey: "excellenceText" },
+              { titleKey: "reliability", descKey: "reliabilityText" },
+              { titleKey: "innovation", descKey: "innovationText" }
             ].map((value) => (
-              <Card key={value.title} className="border-2 hover:border-accent transition-all duration-300 hover:-translate-y-2">
+              <Card key={value.titleKey} className="border-2 hover:border-accent transition-all duration-300 hover:-translate-y-2">
                 <CardContent className="p-6 text-center">
-                  <h3 className="text-2xl font-bold text-accent mb-2">{value.title}</h3>
-                  <p className="text-muted-foreground">{value.desc}</p>
+                  <h3 className="text-2xl font-bold text-accent mb-2">{t(value.titleKey)}</h3>
+                  <p className="text-muted-foreground">{t(value.descKey)}</p>
                 </CardContent>
               </Card>
             ))}

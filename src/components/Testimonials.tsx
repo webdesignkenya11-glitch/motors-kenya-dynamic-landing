@@ -1,6 +1,8 @@
 import { Star, Quote } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Testimonials = () => {
+  const { t } = useLanguage();
   const testimonials = [
     {
       name: "James Mwangi",
@@ -37,10 +39,10 @@ const Testimonials = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12 md:mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            What Our Clients Say
+            {t("whatClientsSay")}
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-            Trusted by leading companies across West Africa
+            {t("trustedByCompanies")}
           </p>
         </div>
 

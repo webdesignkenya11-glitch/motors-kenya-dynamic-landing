@@ -6,8 +6,10 @@ import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import VehicleDetailModal from "./VehicleDetailModal";
 import { Vehicle } from "@/data/vehicles";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const FeaturedTrucks = () => {
+  const { t } = useLanguage();
   const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -34,10 +36,10 @@ const FeaturedTrucks = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 animate-fade-in">
-            Featured Equipment
+            {t("featuredEquipment")}
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4 animate-fade-in delay-100">
-            Discover our premium selection of heavy-duty trucks and specialized machinery
+            {t("discoverPremium")}
           </p>
         </div>
 
@@ -64,7 +66,7 @@ const FeaturedTrucks = () => {
               size="lg"
               className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-8 py-6 text-lg group transition-all duration-300 hover:scale-105 hover:shadow-xl"
             >
-              View Full Inventory
+              {t("viewFullInventory")}
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>

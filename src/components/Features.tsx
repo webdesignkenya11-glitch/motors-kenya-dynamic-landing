@@ -1,41 +1,43 @@
 import { Award, Shield, Truck, Wrench, MapPin, DollarSign } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Features = () => {
+  const { t } = useLanguage();
   const features = [
     {
       icon: Truck,
-      title: "Wide Selection",
-      description: "Comprehensive inventory of heavy-duty trucks and specialized equipment across all categories",
+      titleKey: "wideSelection",
+      descKey: "wideSelectionText",
       color: "text-blue-500",
     },
     {
       icon: Shield,
-      title: "Quality Assured",
-      description: "All equipment undergoes rigorous inspection to ensure reliability and performance",
+      titleKey: "qualityAssured",
+      descKey: "qualityAssuredText",
       color: "text-green-500",
     },
     {
       icon: Award,
-      title: "Expert Service",
-      description: "Professional support team with decades of combined experience in heavy equipment",
+      titleKey: "expertService",
+      descKey: "expertServiceText",
       color: "text-yellow-500",
     },
     {
       icon: Wrench,
-      title: "Maintenance Support",
-      description: "Comprehensive after-sales service and maintenance support across West Africa",
+      titleKey: "maintenanceSupport",
+      descKey: "maintenanceSupportText",
       color: "text-red-500",
     },
     {
       icon: MapPin,
-      title: "Regional Coverage",
-      description: "Strategic locations in 4 countries to serve you better across West Africa",
+      titleKey: "regionalCoverageTitle",
+      descKey: "regionalCoverageText",
       color: "text-purple-500",
     },
     {
       icon: DollarSign,
-      title: "Competitive Pricing",
-      description: "Best value for money with flexible payment options and financing solutions",
+      titleKey: "competitivePricingTitle",
+      descKey: "competitivePricingText",
       color: "text-orange-500",
     },
   ];
@@ -53,10 +55,10 @@ const Features = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12 md:mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Why Choose Equipment King
+            {t("whyChooseEquipmentKing")}
           </h2>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
-            Delivering excellence in heavy equipment across West Africa
+            {t("deliveringExcellence")}
           </p>
         </div>
 
@@ -72,10 +74,10 @@ const Features = () => {
                 <feature.icon className={`w-12 h-12 ${feature.color} relative z-10 group-hover:scale-110 transition-transform`} />
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-accent transition-colors">
-                {feature.title}
+                {t(feature.titleKey)}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                {feature.description}
+                {t(feature.descKey)}
               </p>
             </div>
           ))}
