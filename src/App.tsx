@@ -13,6 +13,7 @@ import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import LiveChatButton from "@/components/ui/live-chat-button";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +36,7 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
+            <LiveChatButton />
           </div>
         </BrowserRouter>
       </TooltipProvider>

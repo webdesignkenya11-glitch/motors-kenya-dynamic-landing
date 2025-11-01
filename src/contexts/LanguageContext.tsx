@@ -95,6 +95,9 @@ const translations = {
     keySpecifications: "Key Specifications",
     equipmentDescription: "Equipment Description",
     featuresEquipment: "Features & Equipment",
+    cargoTrucks: "Cargo Trucks",
+    specialVehicles: "Special Vehicles",
+    contactPrice: "Contact for price",
   },
   fr: {
     // Header
@@ -180,6 +183,9 @@ const translations = {
     keySpecifications: "Spécifications Clés",
     equipmentDescription: "Description de l'Équipement",
     featuresEquipment: "Caractéristiques & Équipement",
+    cargoTrucks: "Camions de Fret",
+    specialVehicles: "Véhicules Spéciaux",
+    contactPrice: "Contactez pour le prix",
   },
 };
 
