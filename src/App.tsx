@@ -7,7 +7,12 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import Index from "./pages/Index";
 import Home from "./pages/Home";
 import Trucks from "./pages/Trucks";
-import Variants from "./pages/Variants";
+import TractorsPage from "./pages/trucks/TractorsPage";
+import DumpTrucksPage from "./pages/trucks/DumpTrucksPage";
+import SpecialVehiclesPage from "./pages/trucks/SpecialVehiclesPage";
+import CargoTrucksPage from "./pages/trucks/CargoTrucksPage";
+import OnRoadTrucksPage from "./pages/trucks/OnRoadTrucksPage";
+import NewEnergyPage from "./pages/trucks/NewEnergyPage";
 import About from "./pages/About";
 import ContactPage from "./pages/ContactPage";
 import NotFound from "./pages/NotFound";
@@ -29,7 +34,12 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/trucks" element={<Trucks />} />
-              <Route path="/variants" element={<Variants />} />
+              <Route path="/trucks/tractors" element={<TractorsPage />} />
+              <Route path="/trucks/dump-trucks" element={<DumpTrucksPage />} />
+              <Route path="/trucks/special-vehicles" element={<SpecialVehiclesPage />} />
+              <Route path="/trucks/cargo-trucks" element={<CargoTrucksPage />} />
+              <Route path="/trucks/on-road-trucks" element={<OnRoadTrucksPage />} />
+              <Route path="/trucks/new-energy" element={<NewEnergyPage />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<ContactPage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

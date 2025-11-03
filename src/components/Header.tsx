@@ -71,17 +71,6 @@ const Header = () => {
               }`} />
             </Link>
             <Link
-              to="/variants"
-              className={`px-4 py-2 rounded-md font-medium transition-all duration-300 relative group ${
-                isActive("/variants") ? "text-accent bg-accent/10" : "text-foreground hover:text-accent hover:bg-accent/5"
-              }`}
-            >
-              {t("variants")}
-              <span className={`absolute bottom-0 left-0 w-full h-0.5 bg-accent transition-transform duration-300 ${
-                isActive("/variants") ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-              }`} />
-            </Link>
-            <Link
               to="/about"
               className={`px-4 py-2 rounded-md font-medium transition-all duration-300 relative group ${
                 isActive("/about") ? "text-accent bg-accent/10" : "text-foreground hover:text-accent hover:bg-accent/5"
@@ -151,15 +140,6 @@ const Header = () => {
                 }`}
               >
                 {t("trucks")}
-              </Link>
-              <Link
-                to="/variants"
-                onClick={closeMobileMenu}
-                className={`px-4 py-3 rounded-md font-medium text-left transition-colors ${
-                  isActive("/variants") ? "bg-accent/10 text-accent" : "text-foreground hover:bg-accent/5"
-                }`}
-              >
-                {t("variants")}
               </Link>
               <Link
                 to="/about"
