@@ -29,8 +29,8 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? "bg-gradient-to-r from-primary/95 via-secondary/95 to-primary/95 backdrop-blur-md shadow-xl border-b border-accent/30" 
-          : "bg-gradient-to-r from-primary/90 via-secondary/90 to-primary/90 backdrop-blur-sm shadow-lg border-b border-accent/20"
+          ? "bg-gradient-to-r from-primary/50 via-secondary/50 to-primary/50 backdrop-blur-md shadow-md border-b border-accent/20" 
+          : "bg-gradient-to-r from-primary/50 via-secondary/50 to-primary/50 backdrop-blur-md shadow-md border-b border-accent/20"
       }`}
     >
       <div className="container mx-auto px-4">
