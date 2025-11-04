@@ -7,7 +7,7 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import contactHeroBg from "@/assets/contact-hero-bg.jpg";
+import contactTruckBg from "@/assets/contact-truck-bg.jpg";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -32,12 +32,12 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-20 bg-muted/30 relative overflow-hidden">
-      {/* Hero background image */}
+      {/* Truck background image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-        style={{ backgroundImage: `url(${contactHeroBg})` }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+        style={{ backgroundImage: `url(${contactTruckBg})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background/90" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
