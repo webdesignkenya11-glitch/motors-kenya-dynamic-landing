@@ -31,13 +31,13 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-muted/30 relative overflow-hidden">
+    <section id="contact" className="py-20 relative overflow-hidden">
       {/* Truck background image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${contactTruckBg})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/60 to-background/70" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
