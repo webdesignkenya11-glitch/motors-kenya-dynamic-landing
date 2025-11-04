@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import contactHeroBg from "@/assets/contact-hero-bg.jpg";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -31,30 +32,27 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-20 bg-muted/30 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse delay-1000" />
+      {/* Hero background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+        style={{ backgroundImage: `url(${contactHeroBg})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent drop-shadow-lg">
             {t("getInTouch")}
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-foreground/80">
             {t("readyToFind")}
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <Card 
-            ref={formAnim.ref}
-            className={`p-8 bg-card border border-border transition-all duration-1000 hover:shadow-2xl ${
-              formAnim.isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
-            }`}
-          >
+          <Card className="p-8 bg-card/95 backdrop-blur-sm border border-border hover:shadow-2xl transition-all duration-300">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-semibold text-card-foreground mb-2">
@@ -118,13 +116,8 @@ const Contact = () => {
           </Card>
 
           {/* Contact Info */}
-          <div 
-            ref={contactInfoAnim.ref}
-            className={`space-y-8 transition-all duration-1000 delay-200 ${
-              contactInfoAnim.isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-            }`}
-          >
-            <Card className="p-6 bg-card border border-border flex items-start gap-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+          <div className="space-y-8">
+            <Card className="p-6 bg-card/95 backdrop-blur-sm border border-border flex items-start gap-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
               <div className="bg-accent/10 p-3 rounded-lg group-hover:bg-accent/20 transition-colors">
                 <Phone className="w-6 h-6 text-accent group-hover:scale-110 transition-transform" />
               </div>
@@ -135,7 +128,7 @@ const Contact = () => {
               </div>
             </Card>
 
-            <Card className="p-6 bg-card border border-border flex items-start gap-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+            <Card className="p-6 bg-card/95 backdrop-blur-sm border border-border flex items-start gap-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
               <div className="bg-accent/10 p-3 rounded-lg group-hover:bg-accent/20 transition-colors">
                 <Mail className="w-6 h-6 text-accent group-hover:scale-110 transition-transform" />
               </div>
@@ -146,7 +139,7 @@ const Contact = () => {
               </div>
             </Card>
 
-            <Card className="p-6 bg-card border border-border flex items-start gap-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
+            <Card className="p-6 bg-card/95 backdrop-blur-sm border border-border flex items-start gap-4 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
               <div className="bg-accent/10 p-3 rounded-lg group-hover:bg-accent/20 transition-colors">
                 <MapPin className="w-6 h-6 text-accent group-hover:scale-110 transition-transform" />
               </div>
@@ -183,7 +176,7 @@ const Contact = () => {
             </div>
 
             {/* Map Placeholder */}
-            <Card className="p-4 bg-card border border-border overflow-hidden">
+            <Card className="p-4 bg-card/95 backdrop-blur-sm border border-border overflow-hidden">
               <div className="bg-muted rounded-lg h-64 flex flex-col items-center justify-center gap-2">
                 <MapPin className="w-12 h-12 text-accent" />
                 <p className="text-foreground font-semibold">{t("mapLocation")}</p>
