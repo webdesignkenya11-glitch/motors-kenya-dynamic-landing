@@ -12,7 +12,7 @@ import trucksHeroBg from "@/assets/trucks-hero-bg.jpg";
 
 // Category images
 import tractorImg from "@/assets/z3track.jpg";
-import dumpTruckImg from "@/assets/Dump Truck E91.jpg";
+import dumpTruckImg from "@/assets/E3dumptruck1.jpg";
 import specialVehicleImg from "@/assets/x6sprinkler1.jpg";
 import cargoTruckImg from "@/assets/cargo1.jpg";
 import onRoadTruckImg from "@/assets/truck1-npr.jpg";
