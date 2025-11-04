@@ -7,6 +7,9 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useState, useEffect } from "react";
 import LoadingScreen from "@/components/LoadingScreen";
 
+// Background image
+import trucksHeroBg from "@/assets/trucks-hero-bg.jpg";
+
 // Category images
 import tractorImg from "@/assets/z3track.jpg";
 import dumpTruckImg from "@/assets/Dump Truck E91.jpg";
@@ -76,21 +79,21 @@ const Trucks = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/30 pt-20 pb-12 relative overflow-hidden">
-      {/* Animated background pattern */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full" style={{
-          backgroundImage: 'radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)',
-          backgroundSize: '40px 40px'
-        }} />
+      {/* Hero background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${trucksHeroBg})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-background" />
       </div>
 
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-white to-white/90 bg-clip-text text-transparent drop-shadow-lg">
             {t("ourTruckFleet")}
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
             {t("browseByCategory")}
           </p>
           <div className="mt-8 flex justify-center">
