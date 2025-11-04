@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Truck } from "lucide-react";
+import { ArrowRight, Truck, Search } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { TruckSearch } from "@/components/TruckSearch";
 
 const Hero = () => {
   const { t } = useLanguage();
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Image with Better Visibility */}
       <div 
         className="absolute inset-0 z-0"
         style={{
@@ -17,66 +18,98 @@ const Hero = () => {
           backgroundPosition: 'center',
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary/90 via-primary/85 to-secondary/90" />
+        {/* Lighter overlay for better image visibility */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/30 to-black/50" />
       </div>
 
-      {/* Animated floating elements - enhanced */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-accent rounded-full animate-ping opacity-75" style={{ animationDelay: '0s' }} />
-        <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-accent rounded-full animate-ping opacity-75" style={{ animationDelay: '2s' }} />
-        <div className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-accent rounded-full animate-ping opacity-75" style={{ animationDelay: '4s' }} />
-        <div className="absolute top-1/2 right-1/3 w-2 h-2 bg-primary-foreground/50 rounded-full animate-ping opacity-50" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-1/3 right-1/4 w-2 h-2 bg-primary-foreground/50 rounded-full animate-ping opacity-50" style={{ animationDelay: '3s' }} />
+      {/* Animated Grid Pattern */}
+      <div className="absolute inset-0 z-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)`,
+          backgroundSize: '50px 50px'
+        }} />
+      </div>
+
+      {/* Enhanced Animated floating elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-accent rounded-full animate-ping opacity-60" style={{ animationDelay: '0s', animationDuration: '3s' }} />
+        <div className="absolute top-1/3 right-1/4 w-3 h-3 bg-accent/80 rounded-full animate-ping opacity-50" style={{ animationDelay: '2s', animationDuration: '4s' }} />
+        <div className="absolute bottom-1/4 left-1/3 w-4 h-4 bg-accent rounded-full animate-ping opacity-60" style={{ animationDelay: '4s', animationDuration: '3.5s' }} />
+        <div className="absolute top-1/2 right-1/3 w-3 h-3 bg-white/60 rounded-full animate-ping opacity-40" style={{ animationDelay: '1s', animationDuration: '5s' }} />
+        <div className="absolute bottom-1/3 right-1/4 w-3 h-3 bg-white/60 rounded-full animate-ping opacity-40" style={{ animationDelay: '3s', animationDuration: '4.5s' }} />
+        <div className="absolute top-2/3 left-1/4 w-2 h-2 bg-accent/70 rounded-full animate-ping opacity-50" style={{ animationDelay: '2.5s', animationDuration: '3s' }} />
+        <div className="absolute bottom-1/2 right-1/2 w-3 h-3 bg-white/50 rounded-full animate-ping opacity-30" style={{ animationDelay: '1.5s', animationDuration: '4s' }} />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
+      <div className="relative z-10 container mx-auto px-4 text-center py-20">
         <div className="max-w-5xl mx-auto space-y-8">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 px-4 py-2 rounded-full mb-4 animate-fade-in">
-            <Truck className="w-4 h-4 text-primary-foreground" />
-            <span className="text-sm font-semibold text-primary-foreground">{t("servingWestAfrica")}</span>
+          {/* Badge with animation */}
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/30 px-5 py-3 rounded-full mb-4 animate-fade-in shadow-lg hover:bg-white/20 transition-all duration-300">
+            <Truck className="w-5 h-5 text-white" />
+            <span className="text-sm font-semibold text-white">{t("servingWestAfrica")}</span>
           </div>
 
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold text-primary-foreground leading-tight animate-fade-in delay-100">
-            {t("equipmentKing")} <span className="text-primary-foreground/90">{t("incorporated")}</span>
+          {/* Main Heading with enhanced styling */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-tight animate-fade-in delay-100 drop-shadow-2xl">
+            {t("equipmentKing")} 
+            <br />
+            <span className="text-white/95 bg-clip-text">{t("incorporated")}</span>
           </h1>
-          <p className="text-2xl md:text-3xl lg:text-4xl text-primary-foreground/90 font-medium animate-fade-in delay-200">
+          
+          <p className="text-xl md:text-2xl lg:text-3xl text-white/95 font-medium animate-fade-in delay-200 drop-shadow-lg max-w-3xl mx-auto">
             {t("westAfricaPremier")}
           </p>
           
-          {/* Countries Badge */}
-          <div className="flex flex-wrap justify-center gap-3 pt-4 animate-fade-in delay-300">
-            <div className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/30 px-4 py-2 rounded-full hover:bg-primary-foreground/20 transition-colors">
-              <span className="text-primary-foreground font-semibold text-sm">🇱🇷 Liberia (HQ)</span>
+          {/* Search Bar - Prominently Positioned */}
+          <div className="max-w-2xl mx-auto pt-6 pb-4 animate-fade-in delay-300">
+            <div className="bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl p-6 border border-white/50 hover:shadow-accent/20 hover:shadow-3xl transition-all duration-300 transform hover:scale-[1.02]">
+              <div className="flex items-center gap-3 mb-3">
+                <Search className="w-6 h-6 text-accent" />
+                <h3 className="text-xl font-bold text-foreground">
+                  {t("findPerfectTruck")}
+                </h3>
+              </div>
+              <p className="text-sm text-muted-foreground mb-4">
+                {t("searchInventory")}
+              </p>
+              <TruckSearch />
             </div>
-            <div className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/30 px-4 py-2 rounded-full hover:bg-primary-foreground/20 transition-colors">
-              <span className="text-primary-foreground font-semibold text-sm">🇲🇱 Mali</span>
+          </div>
+          
+          {/* Countries Badge with enhanced styling */}
+          <div className="flex flex-wrap justify-center gap-3 pt-4 animate-fade-in delay-400">
+            <div className="bg-white/10 backdrop-blur-md border border-white/30 px-5 py-2.5 rounded-full hover:bg-white/20 transition-all duration-300 shadow-lg hover:scale-105">
+              <span className="text-white font-semibold text-sm">🇱🇷 Liberia (HQ)</span>
             </div>
-            <div className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/30 px-4 py-2 rounded-full hover:bg-primary-foreground/20 transition-colors">
-              <span className="text-primary-foreground font-semibold text-sm">🇬🇳 Guinea</span>
+            <div className="bg-white/10 backdrop-blur-md border border-white/30 px-5 py-2.5 rounded-full hover:bg-white/20 transition-all duration-300 shadow-lg hover:scale-105">
+              <span className="text-white font-semibold text-sm">🇲🇱 Mali</span>
             </div>
-            <div className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/30 px-4 py-2 rounded-full hover:bg-primary-foreground/20 transition-colors">
-              <span className="text-primary-foreground font-semibold text-sm">🇸🇱 Sierra Leone</span>
+            <div className="bg-white/10 backdrop-blur-md border border-white/30 px-5 py-2.5 rounded-full hover:bg-white/20 transition-all duration-300 shadow-lg hover:scale-105">
+              <span className="text-white font-semibold text-sm">🇬🇳 Guinea</span>
+            </div>
+            <div className="bg-white/10 backdrop-blur-md border border-white/30 px-5 py-2.5 rounded-full hover:bg-white/20 transition-all duration-300 shadow-lg hover:scale-105">
+              <span className="text-white font-semibold text-sm">🇸🇱 Sierra Leone</span>
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 animate-fade-in delay-400">
+          {/* CTA Buttons with enhanced styling */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 animate-fade-in delay-500">
             <Link to="/trucks">
               <Button 
                 size="lg" 
                 variant="default"
-                className="bg-primary-foreground hover:bg-primary-foreground/90 text-secondary font-semibold px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+                className="bg-accent hover:bg-accent/90 text-white font-bold px-10 py-7 text-lg shadow-2xl hover:shadow-accent/50 transition-all duration-300 hover:scale-110 group border-2 border-accent/20"
               >
                 {t("browseEquipment")}
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-2 transition-transform" />
               </Button>
             </Link>
             <Link to="/contact">
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-2 border-primary-foreground/80 text-primary-foreground hover:bg-primary-foreground/10 font-semibold px-8 py-6 text-lg transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+                className="border-2 border-white/90 bg-white/10 text-white hover:bg-white hover:text-foreground font-bold px-10 py-7 text-lg transition-all duration-300 hover:scale-110 backdrop-blur-md shadow-xl"
               >
                 {t("contactUs")}
               </Button>
@@ -84,6 +117,9 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-0" />
     </section>
   );
 };
