@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Truck, Wrench, Package, Construction, Leaf, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { TruckSearch } from "@/components/TruckSearch";
+
+// Category images
+import tractorImg from "@/assets/z3track.jpg";
+import dumpTruckImg from "@/assets/Dump Truck E91.jpg";
+import specialVehicleImg from "@/assets/x6sprinkler1.jpg";
+import cargoTruckImg from "@/assets/cargo1.jpg";
+import onRoadTruckImg from "@/assets/truck1-npr.jpg";
+import newEnergyImg from "@/assets/E3Track.jpg";
 
 const Trucks = () => {
   const { t } = useLanguage();
@@ -10,50 +19,44 @@ const Trucks = () => {
     {
       name: "Tractors",
       path: "/trucks/tractors",
-      icon: Construction,
+      image: tractorImg,
       description: t("tractorsDesc"),
-      gradient: "from-blue-500/20 to-cyan-500/20",
-      iconColor: "text-blue-500"
+      gradient: "from-blue-500/20 to-cyan-500/20"
     },
     {
       name: "Dump Trucks",
       path: "/trucks/dump-trucks",
-      icon: Truck,
+      image: dumpTruckImg,
       description: t("dumpTrucksDesc"),
-      gradient: "from-orange-500/20 to-red-500/20",
-      iconColor: "text-orange-500"
+      gradient: "from-orange-500/20 to-red-500/20"
     },
     {
       name: "Special Vehicles",
       path: "/trucks/special-vehicles",
-      icon: Wrench,
+      image: specialVehicleImg,
       description: t("specialVehiclesDesc"),
-      gradient: "from-purple-500/20 to-pink-500/20",
-      iconColor: "text-purple-500"
+      gradient: "from-purple-500/20 to-pink-500/20"
     },
     {
       name: "Cargo Trucks",
       path: "/trucks/cargo-trucks",
-      icon: Package,
+      image: cargoTruckImg,
       description: t("cargoTrucksDesc"),
-      gradient: "from-green-500/20 to-emerald-500/20",
-      iconColor: "text-green-500"
+      gradient: "from-green-500/20 to-emerald-500/20"
     },
     {
       name: "On-road Trucks",
       path: "/trucks/on-road-trucks",
-      icon: Truck,
+      image: onRoadTruckImg,
       description: t("onroadTrucksDesc"),
-      gradient: "from-yellow-500/20 to-amber-500/20",
-      iconColor: "text-yellow-600"
+      gradient: "from-yellow-500/20 to-amber-500/20"
     },
     {
       name: "New Energy",
       path: "/trucks/new-energy",
-      icon: Leaf,
+      image: newEnergyImg,
       description: t("newEnergyDesc"),
-      gradient: "from-teal-500/20 to-green-500/20",
-      iconColor: "text-teal-500"
+      gradient: "from-teal-500/20 to-green-500/20"
     }
   ];
 
@@ -68,12 +71,14 @@ const Trucks = () => {
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             {t("browseByCategory")}
           </p>
+          <div className="mt-8 flex justify-center">
+            <TruckSearch />
+          </div>
         </div>
 
         {/* Categories Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {categories.map((category, index) => {
-            const Icon = category.icon;
             return (
               <Link 
                 key={category.path} 
@@ -83,20 +88,25 @@ const Trucks = () => {
               >
                 <Card className="h-full overflow-hidden border-2 transition-all duration-300 hover:border-accent hover:shadow-2xl hover:-translate-y-2 animate-fade-in">
                   <CardContent className="p-0">
-                    <div className={`relative bg-gradient-to-br ${category.gradient} p-8 h-48 flex items-center justify-center overflow-hidden`}>
-                      {/* Animated background effect */}
-                      <div className="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.5))]" />
+                    <div className={`relative bg-gradient-to-br ${category.gradient} h-64 overflow-hidden`}>
+                      {/* Category Image */}
+                      <img 
+                        src={category.image} 
+                        alt={category.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      {/* Overlay gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                       
-                      {/* Icon */}
-                      <div className="relative">
-                        <Icon className={`w-20 h-20 ${category.iconColor} group-hover:scale-110 transition-transform duration-300`} />
+                      {/* Category name on image */}
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <h3 className="text-2xl md:text-3xl font-bold text-white drop-shadow-lg">
+                          {category.name}
+                        </h3>
                       </div>
                     </div>
                     
                     <div className="p-6">
-                      <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-accent transition-colors">
-                        {category.name}
-                      </h3>
                       <p className="text-muted-foreground mb-4 line-clamp-2">
                         {category.description}
                       </p>

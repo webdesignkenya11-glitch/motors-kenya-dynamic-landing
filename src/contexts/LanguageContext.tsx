@@ -32,7 +32,6 @@ const translations = {
     // Variants Page
     vehicleVariants: "Vehicle Variants",
     exploreRange: "Explore our comprehensive range of heavy equipment variants tailored for West African markets",
-    searchPlaceholder: "Search by name, type, or engine...",
     showing: "Showing",
     vehicles: "vehicles",
     all: "All",
@@ -113,6 +112,14 @@ const translations = {
     vehiclesAvailable: "vehicles available",
     backToCategories: "Back to Categories",
     
+    // Search
+    searchTrucks: "Search Trucks",
+    searchPlaceholder: "Search by name, type, or description...",
+    noResults: "No trucks found matching your search",
+    vehiclesFound: "vehicles found",
+    findPerfectTruck: "Find Your Perfect Truck",
+    searchInventory: "Search through our extensive inventory",
+    
     // Features
     whyChooseEquipmentKing: "Why Choose Equipment King",
     deliveringExcellence: "Delivering excellence in heavy equipment across West Africa",
@@ -178,7 +185,6 @@ const translations = {
     // Variants Page
     vehicleVariants: "Variantes de Véhicules",
     exploreRange: "Explorez notre gamme complète de variantes d'équipements lourds adaptées aux marchés d'Afrique de l'Ouest",
-    searchPlaceholder: "Rechercher par nom, type ou moteur...",
     showing: "Affichage de",
     vehicles: "véhicules",
     all: "Tous",
