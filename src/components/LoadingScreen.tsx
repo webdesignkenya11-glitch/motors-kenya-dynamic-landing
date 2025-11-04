@@ -10,7 +10,7 @@ const LoadingScreen = () => {
         </div>
         <div className="space-y-2">
           <h2 className="text-2xl font-bold text-foreground">Loading...</h2>
-          <p className="text-muted-foreground">Preparing your equipment selection</p>
+          <p className="text-muted-foreground">Preparing your next selection</p>
         </div>
         <div className="flex gap-2 justify-center">
           <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
