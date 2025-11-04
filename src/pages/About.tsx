@@ -4,6 +4,11 @@ import { Truck, Globe, Users, Award, Target, CheckCircle } from "lucide-react";
 import logoImage from "@/assets/equipmentking-logo.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useState, useEffect } from "react";
+import LoadingScreen from "@/components/LoadingScreen";
+
+// Background image
+import aboutBackground from "@/assets/truck8-actros.jpg";
 
 const About = () => {
   const { t } = useLanguage();
@@ -11,9 +16,26 @@ const About = () => {
   const statsAnim = useScrollAnimation();
   const servicesAnim = useScrollAnimation();
   const valuesAnim = useScrollAnimation();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) return <LoadingScreen />;
+
   return (
-    <div className="pt-24 pb-16 bg-background">
-      <div className="container mx-auto px-4">
+    <div className="pt-24 pb-16 relative overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${aboutBackground})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/75 to-black/85" />
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
         {/* Hero Section */}
         <div 
           ref={heroAnim.ref}
@@ -28,10 +50,10 @@ const About = () => {
               className="w-32 h-32 object-contain hover:scale-110 transition-transform duration-500" 
             />
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-fade-in">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-accent to-white bg-clip-text text-transparent drop-shadow-lg">
             {t("aboutEquipmentKing")}
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
             {t("trustedPartner")}
           </p>
         </div>
