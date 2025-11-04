@@ -86,12 +86,7 @@ const Trucks = () => {
 
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-12 relative z-10">
-        <div 
-          ref={heroAnim.ref}
-          className={`text-center mb-16 transition-all duration-1000 ${
-            heroAnim.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
+        <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
             {t("ourTruckFleet")}
           </h1>
@@ -104,12 +99,7 @@ const Trucks = () => {
         </div>
 
         {/* Categories Grid */}
-        <div 
-          ref={categoriesAnim.ref}
-          className={`grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto transition-all duration-1000 delay-200 ${
-            categoriesAnim.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {categories.map((category, index) => {
             return (
               <Link 

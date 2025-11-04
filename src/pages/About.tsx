@@ -35,12 +35,7 @@ const About = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Hero Section */}
-        <div 
-          ref={heroAnim.ref}
-          className={`text-center mb-16 transition-all duration-1000 ${
-            heroAnim.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
+        <div className="text-center mb-16">
           <div className="flex justify-center mb-6">
             <img 
               src={logoImage} 
@@ -88,12 +83,7 @@ const About = () => {
         </div>
 
         {/* Stats Section */}
-        <div 
-          ref={statsAnim.ref}
-          className={`grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 transition-all duration-1000 delay-200 ${
-            statsAnim.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           {[
             { value: "15+", label: t("yearsExperience"), delay: "0ms" },
             { value: "500+", label: t("vehiclesSold"), delay: "100ms" },
@@ -116,12 +106,7 @@ const About = () => {
         </div>
 
         {/* Services & Coverage */}
-        <div 
-          ref={servicesAnim.ref}
-          className={`grid md:grid-cols-2 gap-8 mb-16 transition-all duration-1000 delay-300 ${
-            servicesAnim.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
           <Card className="border-2 hover:border-accent transition-all duration-300 hover:shadow-xl group">
             <CardContent className="p-8">
               <div className="flex items-center gap-3 mb-6">
@@ -208,12 +193,7 @@ const About = () => {
         </Card>
 
         {/* Company Values */}
-        <div 
-          ref={valuesAnim.ref}
-          className={`mt-16 text-center transition-all duration-1000 delay-400 ${
-            valuesAnim.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-          }`}
-        >
+        <div className="mt-16 text-center">
           <h2 className="text-4xl font-bold text-foreground mb-8">{t("ourCoreValues")}</h2>
           <div className="grid md:grid-cols-4 gap-6">
             {[
