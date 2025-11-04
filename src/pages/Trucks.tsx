@@ -3,6 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { ArrowRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { TruckSearch } from "@/components/TruckSearch";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 // Category images
 import tractorImg from "@/assets/z3track.jpg";
@@ -14,6 +15,8 @@ import newEnergyImg from "@/assets/E3Track.jpg";
 
 const Trucks = () => {
   const { t } = useLanguage();
+  const heroAnim = useScrollAnimation();
+  const categoriesAnim = useScrollAnimation();
 
   const categories = [
     {
@@ -61,11 +64,24 @@ const Trucks = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/30 pt-20 pb-12">
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted/30 pt-20 pb-12 relative overflow-hidden">
+      {/* Animated background pattern */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-full" style={{
+          backgroundImage: 'radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)',
+          backgroundSize: '40px 40px'
+        }} />
+      </div>
+
       {/* Hero Section */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4">
+      <div className="container mx-auto px-4 py-12 relative z-10">
+        <div 
+          ref={heroAnim.ref}
+          className={`text-center mb-16 transition-all duration-1000 ${
+            heroAnim.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
             {t("ourTruckFleet")}
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -77,16 +93,21 @@ const Trucks = () => {
         </div>
 
         {/* Categories Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        <div 
+          ref={categoriesAnim.ref}
+          className={`grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto transition-all duration-1000 delay-200 ${
+            categoriesAnim.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           {categories.map((category, index) => {
             return (
               <Link 
                 key={category.path} 
                 to={category.path}
-                className="group"
+                className="group animate-fade-in hover-scale"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <Card className="h-full overflow-hidden border-2 transition-all duration-300 hover:border-accent hover:shadow-2xl hover:-translate-y-2 animate-fade-in">
+                <Card className="h-full overflow-hidden border-2 transition-all duration-500 hover:border-accent hover:shadow-2xl hover:-translate-y-2">
                   <CardContent className="p-0">
                     <div className={`relative bg-gradient-to-br ${category.gradient} h-64 overflow-hidden`}>
                       {/* Category Image */}

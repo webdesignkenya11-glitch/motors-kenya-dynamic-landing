@@ -3,18 +3,32 @@ import { Badge } from "@/components/ui/badge";
 import { Truck, Globe, Users, Award, Target, CheckCircle } from "lucide-react";
 import logoImage from "@/assets/equipmentking-logo.png";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const About = () => {
   const { t } = useLanguage();
+  const heroAnim = useScrollAnimation();
+  const statsAnim = useScrollAnimation();
+  const servicesAnim = useScrollAnimation();
+  const valuesAnim = useScrollAnimation();
   return (
     <div className="pt-24 pb-16 bg-background">
       <div className="container mx-auto px-4">
         {/* Hero Section */}
-        <div className="text-center mb-16 animate-fade-in">
+        <div 
+          ref={heroAnim.ref}
+          className={`text-center mb-16 transition-all duration-1000 ${
+            heroAnim.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <div className="flex justify-center mb-6">
-            <img src={logoImage} alt="Equipment King Incorporated" className="w-32 h-32 object-contain" />
+            <img 
+              src={logoImage} 
+              alt="Equipment King Incorporated" 
+              className="w-32 h-32 object-contain hover:scale-110 transition-transform duration-500" 
+            />
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4">
+          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-fade-in">
             {t("aboutEquipmentKing")}
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -54,46 +68,55 @@ const About = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-          <Card className="text-center p-6 border-2 hover:border-accent transition-all duration-300 hover:-translate-y-1">
-            <CardContent className="p-0">
-              <div className="text-5xl font-bold text-accent mb-2">15+</div>
-              <p className="text-muted-foreground font-medium">{t("yearsExperience")}</p>
-            </CardContent>
-          </Card>
-          <Card className="text-center p-6 border-2 hover:border-accent transition-all duration-300 hover:-translate-y-1">
-            <CardContent className="p-0">
-              <div className="text-5xl font-bold text-accent mb-2">500+</div>
-              <p className="text-muted-foreground font-medium">{t("vehiclesSold")}</p>
-            </CardContent>
-          </Card>
-          <Card className="text-center p-6 border-2 hover:border-accent transition-all duration-300 hover:-translate-y-1">
-            <CardContent className="p-0">
-              <div className="text-5xl font-bold text-accent mb-2">4</div>
-              <p className="text-muted-foreground font-medium">{t("countriesServed")}</p>
-            </CardContent>
-          </Card>
-          <Card className="text-center p-6 border-2 hover:border-accent transition-all duration-300 hover:-translate-y-1">
-            <CardContent className="p-0">
-              <div className="text-5xl font-bold text-accent mb-2">100%</div>
-              <p className="text-muted-foreground font-medium">{t("customerSatisfaction")}</p>
-            </CardContent>
-          </Card>
+        <div 
+          ref={statsAnim.ref}
+          className={`grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 transition-all duration-1000 delay-200 ${
+            statsAnim.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          {[
+            { value: "15+", label: t("yearsExperience"), delay: "0ms" },
+            { value: "500+", label: t("vehiclesSold"), delay: "100ms" },
+            { value: "4", label: t("countriesServed"), delay: "200ms" },
+            { value: "100%", label: t("customerSatisfaction"), delay: "300ms" }
+          ].map((stat, index) => (
+            <Card 
+              key={index}
+              className="text-center p-6 border-2 hover:border-accent transition-all duration-300 hover:-translate-y-2 hover:shadow-xl group"
+              style={{ animationDelay: stat.delay }}
+            >
+              <CardContent className="p-0">
+                <div className="text-5xl font-bold text-accent mb-2 group-hover:scale-110 transition-transform">
+                  {stat.value}
+                </div>
+                <p className="text-muted-foreground font-medium">{stat.label}</p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
         {/* Services & Coverage */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          <Card className="border-2">
+        <div 
+          ref={servicesAnim.ref}
+          className={`grid md:grid-cols-2 gap-8 mb-16 transition-all duration-1000 delay-300 ${
+            servicesAnim.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
+          <Card className="border-2 hover:border-accent transition-all duration-300 hover:shadow-xl group">
             <CardContent className="p-8">
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-accent/10 rounded-lg">
-                  <Globe className="w-8 h-8 text-accent" />
+                <div className="p-3 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
+                  <Globe className="w-8 h-8 text-accent group-hover:scale-110 transition-transform" />
                 </div>
                 <h2 className="text-3xl font-bold text-foreground">{t("regionalCoverage")}</h2>
               </div>
               <div className="space-y-3">
-                {["Liberia", "Mali", "Guinea", "Sierra Leone"].map((country) => (
-                  <div key={country} className="flex items-center gap-3">
+                {["Liberia", "Mali", "Guinea", "Sierra Leone"].map((country, index) => (
+                  <div 
+                    key={country} 
+                    className="flex items-center gap-3 hover:translate-x-2 transition-transform"
+                    style={{ animationDelay: `${index * 50}ms` }}
+                  >
                     <CheckCircle className="w-5 h-5 text-accent" />
                     <span className="text-lg text-foreground">{country}</span>
                   </div>
@@ -102,17 +125,21 @@ const About = () => {
             </CardContent>
           </Card>
 
-          <Card className="border-2">
+          <Card className="border-2 hover:border-accent transition-all duration-300 hover:shadow-xl group">
             <CardContent className="p-8">
               <div className="flex items-center gap-3 mb-6">
-                <div className="p-3 bg-accent/10 rounded-lg">
-                  <Truck className="w-8 h-8 text-accent" />
+                <div className="p-3 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors">
+                  <Truck className="w-8 h-8 text-accent group-hover:scale-110 transition-transform" />
                 </div>
                 <h2 className="text-3xl font-bold text-foreground">{t("equipmentRange")}</h2>
               </div>
               <div className="space-y-3">
-                {["Dump Trucks", "Cargo Trucks", "Special Vehicles", "Tractors", "On-road Trucks", "New Energy Vehicles"].map((type) => (
-                  <div key={type} className="flex items-center gap-3">
+                {["Dump Trucks", "Cargo Trucks", "Special Vehicles", "Tractors", "On-road Trucks", "New Energy Vehicles"].map((type, index) => (
+                  <div 
+                    key={type} 
+                    className="flex items-center gap-3 hover:translate-x-2 transition-transform"
+                    style={{ animationDelay: `${index * 50}ms` }}
+                  >
                     <CheckCircle className="w-5 h-5 text-accent" />
                     <span className="text-lg text-foreground">{type}</span>
                   </div>
@@ -161,7 +188,12 @@ const About = () => {
         </Card>
 
         {/* Company Values */}
-        <div className="mt-16 text-center">
+        <div 
+          ref={valuesAnim.ref}
+          className={`mt-16 text-center transition-all duration-1000 delay-400 ${
+            valuesAnim.isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}
+        >
           <h2 className="text-4xl font-bold text-foreground mb-8">{t("ourCoreValues")}</h2>
           <div className="grid md:grid-cols-4 gap-6">
             {[
@@ -169,10 +201,19 @@ const About = () => {
               { titleKey: "excellence", descKey: "excellenceText" },
               { titleKey: "reliability", descKey: "reliabilityText" },
               { titleKey: "innovation", descKey: "innovationText" }
-            ].map((value) => (
-              <Card key={value.titleKey} className="border-2 hover:border-accent transition-all duration-300 hover:-translate-y-2">
+            ].map((value, index) => (
+              <Card 
+                key={value.titleKey} 
+                className="border-2 hover:border-accent transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl group"
+                style={{ 
+                  animationDelay: `${index * 100}ms`,
+                  transitionDelay: `${index * 50}ms`
+                }}
+              >
                 <CardContent className="p-6 text-center">
-                  <h3 className="text-2xl font-bold text-accent mb-2">{t(value.titleKey)}</h3>
+                  <h3 className="text-2xl font-bold text-accent mb-2 group-hover:scale-110 transition-transform">
+                    {t(value.titleKey)}
+                  </h3>
                   <p className="text-muted-foreground">{t(value.descKey)}</p>
                 </CardContent>
               </Card>
