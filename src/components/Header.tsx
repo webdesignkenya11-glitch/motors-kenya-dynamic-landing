@@ -29,8 +29,8 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-border" 
-          : "bg-white/90 backdrop-blur-sm shadow-md border-b border-border/50"
+          ? "bg-gradient-to-r from-primary/95 via-secondary/95 to-primary/95 backdrop-blur-md shadow-xl border-b border-accent/30" 
+          : "bg-gradient-to-r from-primary/90 via-secondary/90 to-primary/90 backdrop-blur-sm shadow-lg border-b border-accent/20"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -41,7 +41,7 @@ const Header = () => {
             className="flex items-center gap-2 md:gap-3 hover:opacity-80 transition-opacity group"
           >
             <img src={logoImage} alt="Equipment King Incorporated" className="w-14 h-14 md:w-20 md:h-20 object-contain transition-transform group-hover:scale-105" />
-            <span className="text-base md:text-xl lg:text-2xl font-bold text-primary">
+            <span className="text-base md:text-xl lg:text-2xl font-bold text-white drop-shadow-lg">
               Equipment King Inc.
             </span>
           </Link>
@@ -51,7 +51,7 @@ const Header = () => {
             <Link
               to="/"
               className={`px-4 py-2 rounded-md font-medium transition-all duration-300 relative group ${
-                isActive("/") ? "text-accent bg-accent/10" : "text-foreground hover:text-accent hover:bg-accent/5"
+                isActive("/") ? "text-white bg-white/20 shadow-lg" : "text-white/90 hover:text-white hover:bg-white/10"
               }`}
             >
               {t("home")}
@@ -62,7 +62,7 @@ const Header = () => {
             <Link
               to="/trucks"
               className={`px-4 py-2 rounded-md font-medium transition-all duration-300 relative group ${
-                isActive("/trucks") ? "text-accent bg-accent/10" : "text-foreground hover:text-accent hover:bg-accent/5"
+                isActive("/trucks") ? "text-white bg-white/20 shadow-lg" : "text-white/90 hover:text-white hover:bg-white/10"
               }`}
             >
               {t("trucks")}
@@ -73,7 +73,7 @@ const Header = () => {
             <Link
               to="/about"
               className={`px-4 py-2 rounded-md font-medium transition-all duration-300 relative group ${
-                isActive("/about") ? "text-accent bg-accent/10" : "text-foreground hover:text-accent hover:bg-accent/5"
+                isActive("/about") ? "text-white bg-white/20 shadow-lg" : "text-white/90 hover:text-white hover:bg-white/10"
               }`}
             >
               {t("about")}
@@ -84,7 +84,7 @@ const Header = () => {
             <Link
               to="/contact"
               className={`px-4 py-2 rounded-md font-medium transition-all duration-300 relative group ${
-                isActive("/contact") ? "text-accent bg-accent/10" : "text-foreground hover:text-accent hover:bg-accent/5"
+                isActive("/contact") ? "text-white bg-white/20 shadow-lg" : "text-white/90 hover:text-white hover:bg-white/10"
               }`}
             >
               {t("contact")}
@@ -96,7 +96,7 @@ const Header = () => {
               onClick={toggleLanguage}
               variant="outline"
               size="sm"
-              className="ml-2 font-semibold"
+              className="ml-2 font-semibold border-white/30 text-white hover:bg-white/10 hover:text-white"
             >
               <Globe className="w-4 h-4 mr-2" />
               {language.toUpperCase()}
@@ -113,7 +113,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-foreground p-2 hover:bg-accent/10 rounded-md transition-colors"
+            className="md:hidden text-white p-2 hover:bg-white/10 rounded-md transition-colors"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -121,13 +121,13 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-border animate-fade-in bg-white/95 backdrop-blur-md">
+          <nav className="md:hidden py-4 border-t border-white/20 animate-fade-in bg-gradient-to-b from-primary/95 to-secondary/95 backdrop-blur-md">
             <div className="flex flex-col gap-2">
               <Link
                 to="/"
                 onClick={closeMobileMenu}
                 className={`px-4 py-3 rounded-md font-medium text-left transition-colors ${
-                  isActive("/") ? "bg-accent/10 text-accent" : "text-foreground hover:bg-accent/5"
+                  isActive("/") ? "bg-white/20 text-white shadow-lg" : "text-white/90 hover:bg-white/10 hover:text-white"
                 }`}
               >
                 {t("home")}
@@ -136,7 +136,7 @@ const Header = () => {
                 to="/trucks"
                 onClick={closeMobileMenu}
                 className={`px-4 py-3 rounded-md font-medium text-left transition-colors ${
-                  isActive("/trucks") ? "bg-accent/10 text-accent" : "text-foreground hover:bg-accent/5"
+                  isActive("/trucks") ? "bg-white/20 text-white shadow-lg" : "text-white/90 hover:bg-white/10 hover:text-white"
                 }`}
               >
                 {t("trucks")}
@@ -145,7 +145,7 @@ const Header = () => {
                 to="/about"
                 onClick={closeMobileMenu}
                 className={`px-4 py-3 rounded-md font-medium text-left transition-colors ${
-                  isActive("/about") ? "bg-accent/10 text-accent" : "text-foreground hover:bg-accent/5"
+                  isActive("/about") ? "bg-white/20 text-white shadow-lg" : "text-white/90 hover:bg-white/10 hover:text-white"
                 }`}
               >
                 {t("about")}
@@ -154,7 +154,7 @@ const Header = () => {
                 to="/contact"
                 onClick={closeMobileMenu}
                 className={`px-4 py-3 rounded-md font-medium text-left transition-colors ${
-                  isActive("/contact") ? "bg-accent/10 text-accent" : "text-foreground hover:bg-accent/5"
+                  isActive("/contact") ? "bg-white/20 text-white shadow-lg" : "text-white/90 hover:bg-white/10 hover:text-white"
                 }`}
               >
                 {t("contact")}
@@ -162,7 +162,7 @@ const Header = () => {
               <Button
                 onClick={toggleLanguage}
                 variant="outline"
-                className="w-full font-semibold"
+                className="w-full font-semibold border-white/30 text-white hover:bg-white/10 hover:text-white"
               >
                 <Globe className="w-4 h-4 mr-2" />
                 {language.toUpperCase()}
