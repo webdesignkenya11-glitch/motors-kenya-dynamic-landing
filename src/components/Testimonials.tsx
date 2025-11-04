@@ -32,9 +32,9 @@ const Testimonials = () => {
 
   return (
     <section className="py-12 md:py-20 bg-gradient-to-b from-muted/30 to-background relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-10 right-10 w-72 h-72 bg-accent/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-10 left-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      {/* Enhanced background decoration */}
+      <div className="absolute top-10 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
+      <div className="absolute bottom-10 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s', animationDelay: '2s' }} />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12 md:mb-16 animate-fade-in">
@@ -50,29 +50,36 @@ const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="group relative p-8 rounded-2xl bg-card border border-border hover:border-accent transition-all duration-300 animate-fade-in hover-scale hover:shadow-xl"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group relative p-8 rounded-2xl bg-card border border-border hover:border-accent transition-all duration-500 animate-fade-in hover-scale overflow-hidden"
+              style={{ 
+                animationDelay: `${index * 100}ms`,
+                boxShadow: 'var(--shadow-md)',
+                transition: 'var(--transition-bounce)'
+              }}
             >
+              {/* Shimmer effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-accent/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+              
               {/* Quote icon */}
-              <Quote className="absolute top-6 right-6 w-12 h-12 text-accent/10 group-hover:text-accent/20 transition-colors" />
+              <Quote className="absolute top-6 right-6 w-12 h-12 text-accent/10 group-hover:text-accent/30 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6" />
               
               {/* Rating */}
-              <div className="flex gap-1 mb-4">
+              <div className="flex gap-1 mb-4 relative z-10">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400 animate-pulse" style={{ animationDelay: `${i * 100}ms` }} />
+                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400 transition-all duration-300 hover:scale-125" style={{ animation: `float 2s ease-in-out infinite`, animationDelay: `${i * 200}ms` }} />
                 ))}
               </div>
 
               {/* Testimonial text */}
-              <p className="text-muted-foreground mb-6 leading-relaxed">"{testimonial.text}"</p>
+              <p className="text-muted-foreground mb-6 leading-relaxed relative z-10 group-hover:text-foreground transition-colors">"{testimonial.text}"</p>
 
               {/* Author info */}
-              <div className="border-t border-border pt-4 flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent font-bold">
+              <div className="border-t border-border pt-4 flex items-center gap-4 relative z-10">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent to-accent/60 flex items-center justify-center text-white font-bold shadow-lg group-hover:shadow-glow transition-all duration-500 group-hover:scale-110">
                   {testimonial.avatar}
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">{testimonial.name}</p>
+                  <p className="font-semibold text-foreground group-hover:text-accent transition-colors">{testimonial.name}</p>
                   <p className="text-sm text-muted-foreground">{testimonial.company}</p>
                   <p className="text-xs text-muted-foreground">{testimonial.location}</p>
                 </div>

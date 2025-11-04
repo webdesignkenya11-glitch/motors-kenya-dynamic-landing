@@ -22,13 +22,19 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/30 to-black/50" />
       </div>
 
-      {/* Animated Grid Pattern */}
+      {/* Enhanced Animated Grid Pattern */}
       <div className="absolute inset-0 z-0 opacity-10">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)`,
-          backgroundSize: '50px 50px'
+        <div className="absolute inset-0 animate-pulse" style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,.15) 2px, transparent 2px), linear-gradient(90deg, rgba(255,255,255,.15) 2px, transparent 2px)`,
+          backgroundSize: '60px 60px',
+          animation: 'float 20s ease-in-out infinite'
         }} />
       </div>
+      
+      {/* Radial gradient overlay */}
+      <div className="absolute inset-0 z-0" style={{
+        background: 'radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,0,0,0.3) 100%)'
+      }} />
 
       {/* Enhanced Animated floating elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
@@ -99,19 +105,24 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="default"
-                className="bg-accent hover:bg-accent/90 text-white font-bold px-10 py-7 text-lg shadow-2xl hover:shadow-accent/50 transition-all duration-300 hover:scale-110 group border-2 border-accent/20"
+                className="relative bg-accent hover:bg-accent/90 text-white font-bold px-10 py-7 text-lg shadow-2xl hover:shadow-glow-lg transition-all duration-300 hover:scale-110 group border-2 border-accent/20 overflow-hidden"
+                style={{ animation: 'glow 3s ease-in-out infinite' }}
               >
-                {t("browseEquipment")}
-                <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                <span className="relative z-10 flex items-center">
+                  {t("browseEquipment")}
+                  <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
               </Button>
             </Link>
             <Link to="/contact">
               <Button 
                 size="lg" 
                 variant="outline"
-                className="border-2 border-white/90 bg-white/10 text-white hover:bg-white hover:text-foreground font-bold px-10 py-7 text-lg transition-all duration-300 hover:scale-110 backdrop-blur-md shadow-xl"
+                className="relative border-2 border-white/90 bg-white/10 text-white hover:bg-white hover:text-foreground font-bold px-10 py-7 text-lg transition-all duration-300 hover:scale-110 backdrop-blur-md shadow-xl group overflow-hidden"
               >
-                {t("contactUs")}
+                <span className="relative z-10">{t("contactUs")}</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
               </Button>
             </Link>
           </div>
