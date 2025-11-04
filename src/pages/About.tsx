@@ -7,9 +7,6 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useState, useEffect } from "react";
 import LoadingScreen from "@/components/LoadingScreen";
 
-// Background image
-import aboutBackground from "@/assets/truck8-actros.jpg";
-
 const About = () => {
   const { t } = useLanguage();
   const heroAnim = useScrollAnimation();
@@ -27,13 +24,13 @@ const About = () => {
   if (isLoading) return <LoadingScreen />;
 
   return (
-    <div className="pt-24 pb-16 relative overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${aboutBackground})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/75 to-black/85" />
+    <div className="pt-24 pb-16 bg-gradient-to-b from-background to-muted/30 relative overflow-hidden">
+      {/* Animated background pattern */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-full" style={{
+          backgroundImage: 'radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)',
+          backgroundSize: '40px 40px'
+        }} />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -51,10 +48,10 @@ const About = () => {
               className="w-32 h-32 object-contain hover:scale-110 transition-transform duration-500" 
             />
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-white via-accent to-white bg-clip-text text-transparent drop-shadow-lg">
+          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
             {t("aboutEquipmentKing")}
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             {t("trustedPartner")}
           </p>
         </div>
